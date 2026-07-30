@@ -79,6 +79,29 @@ def init_db():
             "UPDATE votes SET status = CASE WHEN liked = 1 THEN 'liked' ELSE 'disliked' END WHERE status IS NULL"
         )
         conn.commit()
+        columns.add("status")
+
+    if "liked" in columns:
+        # Drop the legacy NOT NULL "liked" column by recreating the table --
+        # ALTER TABLE ... DROP COLUMN isn't reliably supported across SQLite
+        # versions, and simply leaving "liked" in place means every INSERT
+        # (which only supplies "status") violates its NOT NULL constraint.
+        conn.executescript(
+            """
+            CREATE TABLE votes_new (
+                user TEXT NOT NULL,
+                name TEXT NOT NULL,
+                status TEXT NOT NULL,
+                voted_at TEXT NOT NULL,
+                PRIMARY KEY (user, name)
+            );
+            INSERT INTO votes_new (user, name, status, voted_at)
+                SELECT user, name, status, voted_at FROM votes;
+            DROP TABLE votes;
+            ALTER TABLE votes_new RENAME TO votes;
+            """
+        )
+        conn.commit()
 
     with open(NAMES_PATH) as f:
         names = json.load(f)
