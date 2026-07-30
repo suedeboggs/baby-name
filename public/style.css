@@ -23,7 +23,8 @@ html, body {
 }
 
 #app {
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -34,7 +35,8 @@ html, body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 /* LOGIN */
@@ -175,6 +177,7 @@ html, body {
 /* CARD STAGE */
 .card-stage {
   flex: 1;
+  min-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -186,7 +189,8 @@ html, body {
 .name-card {
   position: relative;
   width: min(320px, 100%);
-  height: min(420px, 60vh);
+  height: min(420px, 100%);
+  min-height: 160px;
   background: var(--card-bg);
   border-radius: 28px;
   box-shadow: 0 16px 40px rgba(0,0,0,0.2);
@@ -195,6 +199,7 @@ html, body {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  overflow: hidden;
   user-select: none;
   touch-action: none;
   cursor: grab;
@@ -214,7 +219,7 @@ html, body {
 }
 
 .card-name {
-  font-size: 42px;
+  font-size: clamp(26px, 8vh, 42px);
   font-weight: 700;
   text-align: center;
   padding: 0 20px;

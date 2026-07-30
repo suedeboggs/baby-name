@@ -95,6 +95,19 @@ def init_db():
                 [(user, i, n) for i, n in enumerate(shuffled)],
             )
     conn.commit()
+
+    # Prune any names that have since been removed from the master list
+    # (e.g. whole categories dropped) from existing queues/votes, without
+    # touching custom names a user added -- those live in NAME_DETAILS too.
+    conn.execute("CREATE TEMP TABLE IF NOT EXISTS valid_names (name TEXT PRIMARY KEY)")
+    conn.execute("DELETE FROM valid_names")
+    conn.executemany(
+        "INSERT INTO valid_names (name) VALUES (?)", [(n,) for n in NAME_DETAILS]
+    )
+    conn.execute("DELETE FROM user_queue WHERE name NOT IN (SELECT name FROM valid_names)")
+    conn.execute("DELETE FROM votes WHERE name NOT IN (SELECT name FROM valid_names)")
+    conn.execute("DROP TABLE valid_names")
+    conn.commit()
     conn.close()
 
 

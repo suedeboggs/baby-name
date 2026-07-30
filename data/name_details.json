@@ -1,14 +1,4 @@
 {
-  "Aadesh": {
-    "category": "South Asian / Indian",
-    "pronunciation": "ah-DESH",
-    "altSpellings": []
-  },
-  "Aarav": {
-    "category": "South Asian / Indian",
-    "pronunciation": "AH-ruhv",
-    "altSpellings": []
-  },
   "Aaron": {
     "category": "Classic / Traditional (English)",
     "pronunciation": "AIR-uhn",
@@ -16,50 +6,6 @@
       "Aron",
       "Arran",
       "Aeron"
-    ]
-  },
-  "Aashish": {
-    "category": "South Asian / Indian",
-    "pronunciation": "AH-shish",
-    "altSpellings": [
-      "Ashish"
-    ]
-  },
-  "Aba": {
-    "category": "African Origin",
-    "pronunciation": "AH-bah",
-    "altSpellings": []
-  },
-  "Abara": {
-    "category": "African Origin",
-    "pronunciation": "ah-BAH-rah",
-    "altSpellings": []
-  },
-  "Abasi": {
-    "category": "African Origin",
-    "pronunciation": "ah-BAH-see",
-    "altSpellings": []
-  },
-  "Abayomi": {
-    "category": "African Origin",
-    "pronunciation": "ah-bah-YOH-mee",
-    "altSpellings": []
-  },
-  "Abbas": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "ah-BAHS",
-    "altSpellings": []
-  },
-  "Abdul": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "ab-DOOL",
-    "altSpellings": []
-  },
-  "Abdullah": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "ab-DOOL-ah",
-    "altSpellings": [
-      "Abdulla"
     ]
   },
   "Abe": {
@@ -70,28 +16,6 @@
   "Abel": {
     "category": "Biblical / Hebrew Origin",
     "pronunciation": "AY-buhl",
-    "altSpellings": []
-  },
-  "Abhay": {
-    "category": "South Asian / Indian",
-    "pronunciation": "uh-BHAY",
-    "altSpellings": []
-  },
-  "Abhijit": {
-    "category": "South Asian / Indian",
-    "pronunciation": "uh-bhee-JEET",
-    "altSpellings": [
-      "Abhijeet"
-    ]
-  },
-  "Abhinav": {
-    "category": "South Asian / Indian",
-    "pronunciation": "uh-bhee-NAHV",
-    "altSpellings": []
-  },
-  "Abhishek": {
-    "category": "South Asian / Indian",
-    "pronunciation": "uh-bhee-SHAYK",
     "altSpellings": []
   },
   "Abraham": {
@@ -137,33 +61,6 @@
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "AH-day",
     "altSpellings": []
-  },
-  "Adebayo": {
-    "category": "African Origin",
-    "pronunciation": "ah-day-BAH-yoh",
-    "altSpellings": []
-  },
-  "Adewale": {
-    "category": "African Origin",
-    "pronunciation": "ah-day-WAH-lay",
-    "altSpellings": []
-  },
-  "Adia": {
-    "category": "African Origin",
-    "pronunciation": "AH-dee-uh",
-    "altSpellings": []
-  },
-  "Adisa": {
-    "category": "African Origin",
-    "pronunciation": "ah-DEE-sah",
-    "altSpellings": []
-  },
-  "Aditya": {
-    "category": "South Asian / Indian",
-    "pronunciation": "uh-DIT-yuh",
-    "altSpellings": [
-      "Adithya"
-    ]
   },
   "Adlai": {
     "category": "Unique / Rare",
@@ -212,27 +109,6 @@
       "Augustin"
     ]
   },
-  "Ahaan": {
-    "category": "South Asian / Indian",
-    "pronunciation": "uh-HAHN",
-    "altSpellings": []
-  },
-  "Ahmad": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "AH-mad",
-    "altSpellings": [
-      "Ahmed",
-      "Ahmet"
-    ]
-  },
-  "Ahmed": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "AH-med",
-    "altSpellings": [
-      "Ahmad",
-      "Ahmet"
-    ]
-  },
   "Aiden": {
     "category": "Modern / Trending (US)",
     "pronunciation": "AY-dn",
@@ -246,55 +122,6 @@
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "AY-jaks",
     "altSpellings": []
-  },
-  "Ajay": {
-    "category": "South Asian / Indian",
-    "pronunciation": "uh-JAY",
-    "altSpellings": []
-  },
-  "Ajit": {
-    "category": "South Asian / Indian",
-    "pronunciation": "uh-JEET",
-    "altSpellings": []
-  },
-  "Akash": {
-    "category": "South Asian / Indian",
-    "pronunciation": "AH-kahsh",
-    "altSpellings": [
-      "Aakash"
-    ]
-  },
-  "Akin": {
-    "category": "African Origin",
-    "pronunciation": "AH-kin",
-    "altSpellings": []
-  },
-  "Akintunde": {
-    "category": "African Origin",
-    "pronunciation": "ah-kin-TOON-day",
-    "altSpellings": []
-  },
-  "Akio": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "AH-kee-oh",
-    "altSpellings": []
-  },
-  "Akira": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "uh-KEER-uh",
-    "altSpellings": []
-  },
-  "Akosua": {
-    "category": "African Origin",
-    "pronunciation": "ah-KOH-swah",
-    "altSpellings": []
-  },
-  "Akshay": {
-    "category": "South Asian / Indian",
-    "pronunciation": "AK-shay",
-    "altSpellings": [
-      "Akshey"
-    ]
   },
   "Al": {
     "category": "Short & Strong (2–4 letters)",
@@ -464,11 +291,6 @@
     "pronunciation": "al-FRAY-doh",
     "altSpellings": []
   },
-  "Ali": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "AH-lee",
-    "altSpellings": []
-  },
   "Alistair": {
     "category": "Vintage / Old-Fashioned Revival",
     "pronunciation": "AL-uh-stair",
@@ -505,18 +327,6 @@
     "pronunciation": "ah-muh-DAY-uhs",
     "altSpellings": []
   },
-  "Amara": {
-    "category": "African Origin",
-    "pronunciation": "uh-MAR-uh",
-    "altSpellings": []
-  },
-  "Amari": {
-    "category": "African Origin",
-    "pronunciation": "uh-MAR-ee",
-    "altSpellings": [
-      "Amare"
-    ]
-  },
   "Ambroise": {
     "category": "French / Romance",
     "pronunciation": "ahm-BRWAHZ",
@@ -531,48 +341,9 @@
       "Ambroise"
     ]
   },
-  "Amin": {
-    "category": "African Origin",
-    "pronunciation": "ah-MEEN",
-    "altSpellings": [
-      "Ameen"
-    ]
-  },
-  "Aminu": {
-    "category": "African Origin",
-    "pronunciation": "ah-MEE-noo",
-    "altSpellings": []
-  },
-  "Amir": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "uh-MEER",
-    "altSpellings": [
-      "Ameer"
-    ]
-  },
-  "Amish": {
-    "category": "South Asian / Indian",
-    "pronunciation": "uh-MEESH",
-    "altSpellings": []
-  },
-  "Amit": {
-    "category": "South Asian / Indian",
-    "pronunciation": "uh-MEET",
-    "altSpellings": []
-  },
   "Amos": {
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "AY-muhs",
-    "altSpellings": []
-  },
-  "Anand": {
-    "category": "South Asian / Indian",
-    "pronunciation": "AH-nund",
-    "altSpellings": []
-  },
-  "Anant": {
-    "category": "South Asian / Indian",
-    "pronunciation": "uh-NUNT",
     "altSpellings": []
   },
   "Anatole": {
@@ -636,26 +407,6 @@
     "pronunciation": "ANG-guhs",
     "altSpellings": []
   },
-  "Anil": {
-    "category": "South Asian / Indian",
-    "pronunciation": "uh-NEEL",
-    "altSpellings": []
-  },
-  "Anirudh": {
-    "category": "South Asian / Indian",
-    "pronunciation": "uh-nee-ROOD",
-    "altSpellings": []
-  },
-  "Anish": {
-    "category": "South Asian / Indian",
-    "pronunciation": "uh-NEESH",
-    "altSpellings": []
-  },
-  "Ankur": {
-    "category": "South Asian / Indian",
-    "pronunciation": "UHN-koor",
-    "altSpellings": []
-  },
   "Annan": {
     "category": "Unique / Rare",
     "pronunciation": "AH-nahn",
@@ -673,11 +424,6 @@
     "pronunciation": "AN-selm",
     "altSpellings": []
   },
-  "Ansh": {
-    "category": "South Asian / Indian",
-    "pronunciation": "AHNSH",
-    "altSpellings": []
-  },
   "Anson": {
     "category": "Unique / Rare",
     "pronunciation": "AN-suhn",
@@ -693,16 +439,6 @@
   "Antonio": {
     "category": "Spanish / Portuguese / Italian",
     "pronunciation": "an-TOH-nee-oh",
-    "altSpellings": []
-  },
-  "Anuj": {
-    "category": "South Asian / Indian",
-    "pronunciation": "uh-NOOJ",
-    "altSpellings": []
-  },
-  "Anwar": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "AN-wahr",
     "altSpellings": []
   },
   "Apollo": {
@@ -801,13 +537,6 @@
     "pronunciation": "AIR-uh-stot-uhl",
     "altSpellings": []
   },
-  "Arjun": {
-    "category": "South Asian / Indian",
-    "pronunciation": "AR-juhn",
-    "altSpellings": [
-      "Arjuna"
-    ]
-  },
   "Arlen": {
     "category": "Unique / Rare",
     "pronunciation": "AR-luhn",
@@ -831,11 +560,6 @@
   "Arnaud": {
     "category": "French / Romance",
     "pronunciation": "ar-NOH",
-    "altSpellings": []
-  },
-  "Arnav": {
-    "category": "South Asian / Indian",
-    "pronunciation": "AR-nuv",
     "altSpellings": []
   },
   "Arne": {
@@ -924,11 +648,6 @@
       "Arthur"
     ]
   },
-  "Arun": {
-    "category": "South Asian / Indian",
-    "pronunciation": "uh-ROON",
-    "altSpellings": []
-  },
   "Arvid": {
     "category": "Norse / Scandinavian",
     "pronunciation": "AR-vid",
@@ -938,13 +657,6 @@
     "category": "Unique / Rare",
     "pronunciation": "AR-voh",
     "altSpellings": []
-  },
-  "Aryan": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "AR-yuhn",
-    "altSpellings": [
-      "Arian"
-    ]
   },
   "Asbjorn": {
     "category": "Norse / Scandinavian",
@@ -966,11 +678,6 @@
     "pronunciation": "ASH-er",
     "altSpellings": []
   },
-  "Ashwin": {
-    "category": "South Asian / Indian",
-    "pronunciation": "ASH-win",
-    "altSpellings": []
-  },
   "Asmund": {
     "category": "Norse / Scandinavian",
     "pronunciation": "AHS-muhnd",
@@ -989,11 +696,6 @@
   "Aten": {
     "category": "Unique / Rare",
     "pronunciation": "AH-ten",
-    "altSpellings": []
-  },
-  "Atharv": {
-    "category": "South Asian / Indian",
-    "pronunciation": "uh-THARV",
     "altSpellings": []
   },
   "Athos": {
@@ -1051,11 +753,6 @@
       "Austen"
     ]
   },
-  "Avi": {
-    "category": "South Asian / Indian",
-    "pronunciation": "AH-vee",
-    "altSpellings": []
-  },
   "Avon": {
     "category": "Unique / Rare",
     "pronunciation": "AY-vuhn",
@@ -1079,13 +776,6 @@
       "Axell"
     ]
   },
-  "Ayaan": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "eye-YAHN",
-    "altSpellings": [
-      "Ayan"
-    ]
-  },
   "Aydan": {
     "category": "Unique / Rare",
     "pronunciation": "AY-dn",
@@ -1094,23 +784,6 @@
       "Aiden",
       "Ayden"
     ]
-  },
-  "Ayub": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "ah-YOOB",
-    "altSpellings": [
-      "Ayoub"
-    ]
-  },
-  "Ayush": {
-    "category": "South Asian / Indian",
-    "pronunciation": "AH-yoosh",
-    "altSpellings": []
-  },
-  "Aziz": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "ah-ZEEZ",
-    "altSpellings": []
   },
   "Baldric": {
     "category": "Unique / Rare",
@@ -1123,16 +796,6 @@
     "altSpellings": [
       "Balder"
     ]
-  },
-  "Balogun": {
-    "category": "African Origin",
-    "pronunciation": "bah-LOH-goon",
-    "altSpellings": []
-  },
-  "Bao": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "BOW",
-    "altSpellings": []
   },
   "Baptiste": {
     "category": "French / Romance",
@@ -1235,11 +898,6 @@
   "Bay": {
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "BAY",
-    "altSpellings": []
-  },
-  "Bayo": {
-    "category": "African Origin",
-    "pronunciation": "BAH-yoh",
     "altSpellings": []
   },
   "Beal": {
@@ -1358,18 +1016,6 @@
     "category": "French / Romance",
     "pronunciation": "BER-trand",
     "altSpellings": []
-  },
-  "Bhavesh": {
-    "category": "South Asian / Indian",
-    "pronunciation": "BHAH-vesh",
-    "altSpellings": []
-  },
-  "Bilal": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "bih-LAHL",
-    "altSpellings": [
-      "Bilaal"
-    ]
   },
   "Birch": {
     "category": "Nature-Inspired",
@@ -1977,11 +1623,6 @@
     "pronunciation": "CHAD-wik",
     "altSpellings": []
   },
-  "Chang": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "CHAHNG",
-    "altSpellings": []
-  },
   "Chaos": {
     "category": "Celestial / Mythology",
     "pronunciation": "KAY-os",
@@ -1997,49 +1638,9 @@
     "pronunciation": "CHAYSS",
     "altSpellings": []
   },
-  "Chen": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "CHEN",
-    "altSpellings": []
-  },
-  "Cheng": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "CHUNG",
-    "altSpellings": []
-  },
   "Chester": {
     "category": "Vintage / Old-Fashioned Revival",
     "pronunciation": "CHES-ter",
-    "altSpellings": []
-  },
-  "Chidi": {
-    "category": "African Origin",
-    "pronunciation": "CHEE-dee",
-    "altSpellings": []
-  },
-  "Chike": {
-    "category": "African Origin",
-    "pronunciation": "CHEE-kay",
-    "altSpellings": []
-  },
-  "Chimezie": {
-    "category": "African Origin",
-    "pronunciation": "chee-MEH-zee",
-    "altSpellings": []
-  },
-  "Chinedu": {
-    "category": "African Origin",
-    "pronunciation": "chee-NEH-doo",
-    "altSpellings": []
-  },
-  "Chirag": {
-    "category": "South Asian / Indian",
-    "pronunciation": "chee-RAHG",
-    "altSpellings": []
-  },
-  "Chisom": {
-    "category": "African Origin",
-    "pronunciation": "CHEE-sohm",
     "altSpellings": []
   },
   "Christoph": {
@@ -2059,11 +1660,6 @@
       "Kristopher",
       "Christofer"
     ]
-  },
-  "Chukwu": {
-    "category": "African Origin",
-    "pronunciation": "CHOOK-woo",
-    "altSpellings": []
   },
   "Cian": {
     "category": "Celtic / Irish / Scottish",
@@ -2437,11 +2033,6 @@
       "Cesar"
     ]
   },
-  "Dae": {
-    "category": "East Asian — Korean",
-    "pronunciation": "DAY",
-    "altSpellings": []
-  },
   "Dag": {
     "category": "Norse / Scandinavian",
     "pronunciation": "DAHG",
@@ -2452,16 +2043,6 @@
     "pronunciation": "DAHG-fin-oor",
     "altSpellings": []
   },
-  "Daichi": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "DY-chee",
-    "altSpellings": []
-  },
-  "Daiki": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "DY-kee",
-    "altSpellings": []
-  },
   "Daimen": {
     "category": "Unique / Rare",
     "pronunciation": "DAY-men",
@@ -2469,16 +2050,6 @@
       "Damian",
       "Damien"
     ]
-  },
-  "Daisuke": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "dy-SOO-keh",
-    "altSpellings": []
-  },
-  "Daksh": {
-    "category": "South Asian / Indian",
-    "pronunciation": "DUKSH",
-    "altSpellings": []
   },
   "Dal": {
     "category": "Unique / Rare",
@@ -2488,11 +2059,6 @@
   "Dale": {
     "category": "Classic / Traditional (English)",
     "pronunciation": "DAYL",
-    "altSpellings": []
-  },
-  "Dami": {
-    "category": "African Origin",
-    "pronunciation": "DAH-mee",
     "altSpellings": []
   },
   "Damien": {
@@ -2543,11 +2109,6 @@
       "Darrin"
     ]
   },
-  "Darshan": {
-    "category": "South Asian / Indian",
-    "pronunciation": "dar-SHAHN",
-    "altSpellings": []
-  },
   "Dash": {
     "category": "Modern / Trending (US)",
     "pronunciation": "DASH",
@@ -2560,19 +2121,6 @@
       "Dashiel",
       "Dashell"
     ]
-  },
-  "Daud": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "dah-OOD",
-    "altSpellings": [
-      "Dawud",
-      "Dawood"
-    ]
-  },
-  "Dauda": {
-    "category": "African Origin",
-    "pronunciation": "DOW-dah",
-    "altSpellings": []
   },
   "David": {
     "category": "Classic / Traditional (English)",
@@ -2606,11 +2154,6 @@
       "Daxten"
     ]
   },
-  "Dayo": {
-    "category": "African Origin",
-    "pronunciation": "DAH-yoh",
-    "altSpellings": []
-  },
   "Dean": {
     "category": "Classic / Traditional (English)",
     "pronunciation": "DEEN",
@@ -2631,21 +2174,9 @@
       "Decklan"
     ]
   },
-  "Deepak": {
-    "category": "South Asian / Indian",
-    "pronunciation": "DEE-pak",
-    "altSpellings": [
-      "Dipak"
-    ]
-  },
   "Delbert": {
     "category": "Vintage / Old-Fashioned Revival",
     "pronunciation": "DEL-bert",
-    "altSpellings": []
-  },
-  "Dele": {
-    "category": "African Origin",
-    "pronunciation": "DEH-leh",
     "altSpellings": []
   },
   "Demetrius": {
@@ -2701,11 +2232,6 @@
       "Dezmond"
     ]
   },
-  "Dev": {
-    "category": "South Asian / Indian",
-    "pronunciation": "DEV",
-    "altSpellings": []
-  },
   "Devin": {
     "category": "Modern / Trending (US)",
     "pronunciation": "DEV-in",
@@ -2740,18 +2266,6 @@
       "Dezzy"
     ]
   },
-  "Dhruv": {
-    "category": "South Asian / Indian",
-    "pronunciation": "DROOV",
-    "altSpellings": [
-      "Dhruva"
-    ]
-  },
-  "Diallo": {
-    "category": "African Origin",
-    "pronunciation": "dee-AH-loh",
-    "altSpellings": []
-  },
   "Diarmuid": {
     "category": "Celtic / Irish / Scottish",
     "pronunciation": "DEER-mid",
@@ -2784,11 +2298,6 @@
     "pronunciation": "DEETS",
     "altSpellings": []
   },
-  "Dikembe": {
-    "category": "African Origin",
-    "pronunciation": "dee-KEM-bay",
-    "altSpellings": []
-  },
   "Dilan": {
     "category": "Unique / Rare",
     "pronunciation": "DIL-an",
@@ -2809,13 +2318,6 @@
     "category": "German / Dutch",
     "pronunciation": "DURK",
     "altSpellings": []
-  },
-  "Divit": {
-    "category": "South Asian / Indian",
-    "pronunciation": "DIV-it",
-    "altSpellings": [
-      "Divith"
-    ]
   },
   "Dmitri": {
     "category": "Slavic / Eastern European",
@@ -2860,11 +2362,6 @@
       "Donald",
       "Donall"
     ]
-  },
-  "Dong": {
-    "category": "East Asian — Korean",
-    "pronunciation": "DONG",
-    "altSpellings": []
   },
   "Donnchadha": {
     "category": "Celtic / Irish / Scottish",
@@ -2966,11 +2463,6 @@
     "pronunciation": "DUF",
     "altSpellings": []
   },
-  "Dumisani": {
-    "category": "African Origin",
-    "pronunciation": "doo-mih-SAH-nee",
-    "altSpellings": []
-  },
   "Duncan": {
     "category": "Classic / Traditional (English)",
     "pronunciation": "DUN-kun",
@@ -3038,11 +2530,6 @@
     "pronunciation": "EB-ner",
     "altSpellings": []
   },
-  "Ebuka": {
-    "category": "African Origin",
-    "pronunciation": "eh-BOO-kah",
-    "altSpellings": []
-  },
   "Ed": {
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "ED",
@@ -3094,11 +2581,6 @@
     "pronunciation": "ED-win",
     "altSpellings": []
   },
-  "Efemena": {
-    "category": "African Origin",
-    "pronunciation": "eh-feh-MEH-nah",
-    "altSpellings": []
-  },
   "Egan": {
     "category": "Unique / Rare",
     "pronunciation": "EE-gun",
@@ -3138,11 +2620,6 @@
     "altSpellings": [
       "Einar"
     ]
-  },
-  "Ekon": {
-    "category": "African Origin",
-    "pronunciation": "EH-kon",
-    "altSpellings": []
   },
   "Elan": {
     "category": "Unique / Rare",
@@ -3290,11 +2767,6 @@
   "Ember": {
     "category": "Nature-Inspired",
     "pronunciation": "EM-ber",
-    "altSpellings": []
-  },
-  "Emeka": {
-    "category": "African Origin",
-    "pronunciation": "eh-MEH-kah",
     "altSpellings": []
   },
   "Emerson": {
@@ -3614,11 +3086,6 @@
     "pronunciation": "EZ",
     "altSpellings": []
   },
-  "Eze": {
-    "category": "African Origin",
-    "pronunciation": "EH-zeh",
-    "altSpellings": []
-  },
   "Ezekiel": {
     "category": "Biblical / Hebrew Origin",
     "pronunciation": "ih-ZEE-kee-el",
@@ -3674,11 +3141,6 @@
     "pronunciation": "FAYN",
     "altSpellings": []
   },
-  "Fang": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "FANG",
-    "altSpellings": []
-  },
   "Faolan": {
     "category": "Celtic / Irish / Scottish",
     "pronunciation": "FAY-lan",
@@ -3691,27 +3153,6 @@
     "pronunciation": "FAIR-en",
     "altSpellings": [
       "Farren"
-    ]
-  },
-  "Farhan": {
-    "category": "South Asian / Indian",
-    "pronunciation": "far-HAHN",
-    "altSpellings": [
-      "Farhaan"
-    ]
-  },
-  "Farid": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "fuh-REED",
-    "altSpellings": [
-      "Fareed"
-    ]
-  },
-  "Faris": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "FAR-iss",
-    "altSpellings": [
-      "Fares"
     ]
   },
   "Farran": {
@@ -3761,16 +3202,6 @@
   "Felix": {
     "category": "Greek / Latin Origin",
     "pronunciation": "FEE-liks",
-    "altSpellings": []
-  },
-  "Femi": {
-    "category": "African Origin",
-    "pronunciation": "FEH-mee",
-    "altSpellings": []
-  },
-  "Feng": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "FUNG",
     "altSpellings": []
   },
   "Fenix": {
@@ -4011,11 +3442,6 @@
       "Flynn"
     ]
   },
-  "Folake": {
-    "category": "African Origin",
-    "pronunciation": "foh-LAH-keh",
-    "altSpellings": []
-  },
   "Forbin": {
     "category": "Unique / Rare",
     "pronunciation": "FOR-bin",
@@ -4124,11 +3550,6 @@
       "Frederick"
     ]
   },
-  "Funsho": {
-    "category": "African Origin",
-    "pronunciation": "FOON-shoh",
-    "altSpellings": []
-  },
   "Fyodor": {
     "category": "Slavic / Eastern European",
     "pronunciation": "FYOH-dor",
@@ -4181,21 +3602,6 @@
     "pronunciation": "GAL-uh-her",
     "altSpellings": []
   },
-  "Gamba": {
-    "category": "African Origin",
-    "pronunciation": "GAHM-bah",
-    "altSpellings": []
-  },
-  "Gang": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "GAHNG",
-    "altSpellings": []
-  },
-  "Garba": {
-    "category": "African Origin",
-    "pronunciation": "GAR-bah",
-    "altSpellings": []
-  },
   "Gareth": {
     "category": "Unique / Rare",
     "pronunciation": "GAIR-eth",
@@ -4228,11 +3634,6 @@
   "Gaspard": {
     "category": "French / Romance",
     "pronunciation": "gas-PAR",
-    "altSpellings": []
-  },
-  "Gaurav": {
-    "category": "South Asian / Indian",
-    "pronunciation": "GOW-ruv",
     "altSpellings": []
   },
   "Gautier": {
@@ -4460,11 +3861,6 @@
     "pronunciation": "gohn-SAH-loh",
     "altSpellings": []
   },
-  "Goo": {
-    "category": "East Asian — Korean",
-    "pronunciation": "GOO",
-    "altSpellings": []
-  },
   "Gordan": {
     "category": "Celtic / Irish / Scottish",
     "pronunciation": "GOR-dan",
@@ -4583,11 +3979,6 @@
     "pronunciation": "GROHV",
     "altSpellings": []
   },
-  "Guang": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "GWAHNG",
-    "altSpellings": []
-  },
   "Guido": {
     "category": "Spanish / Portuguese / Italian",
     "pronunciation": "GWEE-doh",
@@ -4643,13 +4034,6 @@
     "altSpellings": [
       "Gunter",
       "Guenter"
-    ]
-  },
-  "Ha-eun": {
-    "category": "East Asian — Korean",
-    "pronunciation": "hah-UN",
-    "altSpellings": [
-      "Haeun"
     ]
   },
   "Haddon": {
@@ -4730,13 +4114,6 @@
     "pronunciation": "HAL-vin",
     "altSpellings": []
   },
-  "Hamid": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "hah-MEED",
-    "altSpellings": [
-      "Hameed"
-    ]
-  },
   "Hamish": {
     "category": "Celtic / Irish / Scottish",
     "pronunciation": "HAY-mish",
@@ -4747,21 +4124,9 @@
     "pronunciation": "HAY-moh",
     "altSpellings": []
   },
-  "Hamza": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "HAHM-zah",
-    "altSpellings": [
-      "Hamzah"
-    ]
-  },
   "Han": {
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "HAHN",
-    "altSpellings": []
-  },
-  "Hani": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "HAH-nee",
     "altSpellings": []
   },
   "Hank": {
@@ -4777,11 +4142,6 @@
   "Hans": {
     "category": "German / Dutch",
     "pronunciation": "HAHNZ",
-    "altSpellings": []
-  },
-  "Hao": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "HOW",
     "altSpellings": []
   },
   "Harald": {
@@ -4844,11 +4204,6 @@
     "pronunciation": "HART",
     "altSpellings": []
   },
-  "Haruki": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "hah-ROO-kee",
-    "altSpellings": []
-  },
   "Harvey": {
     "category": "Classic / Traditional (English)",
     "pronunciation": "HAR-vee",
@@ -4861,22 +4216,6 @@
     "pronunciation": "HAR-vin",
     "altSpellings": [
       "Harvin"
-    ]
-  },
-  "Hasan": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "hah-SAHN",
-    "altSpellings": [
-      "Hassan",
-      "Hasaan"
-    ]
-  },
-  "Hassan": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "hah-SAHN",
-    "altSpellings": [
-      "Hasan",
-      "Hasaan"
     ]
   },
   "Havel": {
@@ -4899,11 +4238,6 @@
   "Hawkins": {
     "category": "Unique / Rare",
     "pronunciation": "HAW-kinz",
-    "altSpellings": []
-  },
-  "Hayato": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "hah-YAH-toh",
     "altSpellings": []
   },
   "Hayden": {
@@ -4975,11 +4309,6 @@
       "Helio"
     ]
   },
-  "Hemant": {
-    "category": "South Asian / Indian",
-    "pronunciation": "HAY-munt",
-    "altSpellings": []
-  },
   "Hendrik": {
     "category": "German / Dutch",
     "pronunciation": "HEN-drik",
@@ -4987,11 +4316,6 @@
       "Henrik",
       "Hendrick"
     ]
-  },
-  "Heng": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "HENG",
-    "altSpellings": []
   },
   "Henri": {
     "category": "French / Romance",
@@ -5074,11 +4398,6 @@
     "pronunciation": "HEKS-lee",
     "altSpellings": []
   },
-  "Hideo": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "hee-DEH-oh",
-    "altSpellings": []
-  },
   "Hiko": {
     "category": "Unique / Rare",
     "pronunciation": "HEE-koh",
@@ -5090,26 +4409,6 @@
     "altSpellings": [
       "Hyrum"
     ]
-  },
-  "Hiroki": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "hee-ROH-kee",
-    "altSpellings": []
-  },
-  "Hiroshi": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "hee-ROH-shee",
-    "altSpellings": []
-  },
-  "Hitesh": {
-    "category": "South Asian / Indian",
-    "pronunciation": "HEE-tesh",
-    "altSpellings": []
-  },
-  "Ho": {
-    "category": "East Asian — Korean",
-    "pronunciation": "HOH",
-    "altSpellings": []
   },
   "Holden": {
     "category": "Vintage / Old-Fashioned Revival",
@@ -5131,22 +4430,12 @@
     "pronunciation": "HOHLT",
     "altSpellings": []
   },
-  "Hong": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "HAWNG",
-    "altSpellings": []
-  },
   "Honor": {
     "category": "Unique / Rare",
     "pronunciation": "ON-er",
     "altSpellings": [
       "Honour"
     ]
-  },
-  "Hoon": {
-    "category": "East Asian — Korean",
-    "pronunciation": "HOON",
-    "altSpellings": []
   },
   "Horace": {
     "category": "Vintage / Old-Fashioned Revival",
@@ -5188,16 +4477,6 @@
     "pronunciation": "HOW",
     "altSpellings": []
   },
-  "Hua": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "HWAH",
-    "altSpellings": []
-  },
-  "Huang": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "HWAHNG",
-    "altSpellings": []
-  },
   "Hubert": {
     "category": "Vintage / Old-Fashioned Revival",
     "pronunciation": "HYOO-bert",
@@ -5225,11 +4504,6 @@
       "Hugh"
     ]
   },
-  "Hui": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "HWEE",
-    "altSpellings": []
-  },
   "Humphrey": {
     "category": "Vintage / Old-Fashioned Revival",
     "pronunciation": "HUM-free",
@@ -5243,11 +4517,6 @@
   "Hyperion": {
     "category": "Celestial / Mythology",
     "pronunciation": "hy-PEER-ee-on",
-    "altSpellings": []
-  },
-  "Hyun": {
-    "category": "East Asian — Korean",
-    "pronunciation": "HYUHN",
     "altSpellings": []
   },
   "Iain": {
@@ -5275,16 +4544,6 @@
     "pronunciation": "IK-uh-rus",
     "altSpellings": []
   },
-  "Idris": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "ID-riss",
-    "altSpellings": []
-  },
-  "Ifeanyi": {
-    "category": "African Origin",
-    "pronunciation": "ee-FAHN-yee",
-    "altSpellings": []
-  },
   "Ignacio": {
     "category": "Spanish / Portuguese / Italian",
     "pronunciation": "ig-NAH-see-oh",
@@ -5305,34 +4564,12 @@
     "pronunciation": "EYEK",
     "altSpellings": []
   },
-  "Ikenna": {
-    "category": "African Origin",
-    "pronunciation": "ee-KEN-nah",
-    "altSpellings": []
-  },
   "Ilya": {
     "category": "Slavic / Eastern European",
     "pronunciation": "il-YAH",
     "altSpellings": [
       "Illya"
     ]
-  },
-  "Imran": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "im-RAHN",
-    "altSpellings": [
-      "Emran"
-    ]
-  },
-  "In": {
-    "category": "East Asian — Korean",
-    "pronunciation": "IN",
-    "altSpellings": []
-  },
-  "Inder": {
-    "category": "South Asian / Indian",
-    "pronunciation": "IN-der",
-    "altSpellings": []
   },
   "Indigo": {
     "category": "Nature-Inspired",
@@ -5373,11 +4610,6 @@
       "Irvin"
     ]
   },
-  "Isa": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "EE-sah",
-    "altSpellings": []
-  },
   "Isaac": {
     "category": "Biblical / Hebrew Origin",
     "pronunciation": "EYE-zik",
@@ -5393,38 +4625,6 @@
       "Izaiah",
       "Isaia"
     ]
-  },
-  "Isamu": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "ee-SAH-moo",
-    "altSpellings": []
-  },
-  "Ishaan": {
-    "category": "South Asian / Indian",
-    "pronunciation": "ee-SHAHN",
-    "altSpellings": [
-      "Ishan"
-    ]
-  },
-  "Ishan": {
-    "category": "South Asian / Indian",
-    "pronunciation": "ee-SHAHN",
-    "altSpellings": [
-      "Ishaan"
-    ]
-  },
-  "Ismail": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "iz-may-EEL",
-    "altSpellings": [
-      "Ismael",
-      "Isma'il"
-    ]
-  },
-  "Isoke": {
-    "category": "African Origin",
-    "pronunciation": "ee-SOH-kay",
-    "altSpellings": []
   },
   "Israel": {
     "category": "Biblical / Hebrew Origin",
@@ -5446,25 +4646,6 @@
   "Ivo": {
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "EE-voh",
-    "altSpellings": []
-  },
-  "Iyke": {
-    "category": "African Origin",
-    "pronunciation": "EYEK",
-    "altSpellings": [
-      "Ike"
-    ]
-  },
-  "Jabir": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "JAH-beer",
-    "altSpellings": [
-      "Jaber"
-    ]
-  },
-  "Jabulani": {
-    "category": "African Origin",
-    "pronunciation": "jah-boo-LAH-nee",
     "altSpellings": []
   },
   "Jace": {
@@ -5506,30 +4687,6 @@
       "Jaeden"
     ]
   },
-  "Jae": {
-    "category": "East Asian — Korean",
-    "pronunciation": "JAY",
-    "altSpellings": []
-  },
-  "Jai": {
-    "category": "South Asian / Indian",
-    "pronunciation": "JY",
-    "altSpellings": [
-      "Jaye"
-    ]
-  },
-  "Jalal": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "juh-LAHL",
-    "altSpellings": []
-  },
-  "Jalil": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "juh-LEEL",
-    "altSpellings": [
-      "Jaleel"
-    ]
-  },
   "James": {
     "category": "Classic / Traditional (English)",
     "pronunciation": "JAYMZ",
@@ -5545,11 +4702,6 @@
   "Jasper": {
     "category": "Biblical / Hebrew Origin",
     "pronunciation": "JAS-per",
-    "altSpellings": []
-  },
-  "Jatin": {
-    "category": "South Asian / Indian",
-    "pronunciation": "JUH-tin",
     "altSpellings": []
   },
   "Javier": {
@@ -5660,38 +4812,6 @@
       "Jet"
     ]
   },
-  "Jian": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "JYEN",
-    "altSpellings": []
-  },
-  "Jibril": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "jih-BREEL",
-    "altSpellings": [
-      "Jibreel"
-    ]
-  },
-  "Jide": {
-    "category": "African Origin",
-    "pronunciation": "JEE-day",
-    "altSpellings": []
-  },
-  "Jie": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "JYEH",
-    "altSpellings": []
-  },
-  "Jin": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "JIN",
-    "altSpellings": []
-  },
-  "Jiro": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "JEE-roh",
-    "altSpellings": []
-  },
   "Jo": {
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "JOH",
@@ -5754,11 +4874,6 @@
       "Johnathan",
       "Johnathon"
     ]
-  },
-  "Jong": {
-    "category": "East Asian — Korean",
-    "pronunciation": "JONG",
-    "altSpellings": []
   },
   "Joost": {
     "category": "German / Dutch",
@@ -5868,11 +4983,6 @@
     "pronunciation": "JOO-lee-us",
     "altSpellings": []
   },
-  "Jun": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "JUHN",
-    "altSpellings": []
-  },
   "Jupiter": {
     "category": "Greek / Latin Origin",
     "pronunciation": "JOO-pih-ter",
@@ -5885,11 +4995,6 @@
       "Justyn"
     ]
   },
-  "Kabir": {
-    "category": "South Asian / Indian",
-    "pronunciation": "kuh-BEER",
-    "altSpellings": []
-  },
   "Kai": {
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "KY",
@@ -5897,21 +5002,6 @@
       "Ky",
       "Kaj"
     ]
-  },
-  "Kaito": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "KY-toh",
-    "altSpellings": []
-  },
-  "Kamau": {
-    "category": "African Origin",
-    "pronunciation": "kah-MAH-oo",
-    "altSpellings": []
-  },
-  "Kamu": {
-    "category": "African Origin",
-    "pronunciation": "KAH-moo",
-    "altSpellings": []
   },
   "Kane": {
     "category": "Modern / Trending (US)",
@@ -5921,46 +5011,12 @@
       "Kayne"
     ]
   },
-  "Kang": {
-    "category": "East Asian — Korean",
-    "pronunciation": "KAHNG",
-    "altSpellings": []
-  },
-  "Kaoru": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "kah-OH-roo",
-    "altSpellings": []
-  },
-  "Karan": {
-    "category": "South Asian / Indian",
-    "pronunciation": "KAR-uhn",
-    "altSpellings": []
-  },
-  "Kareem": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "kuh-REEM",
-    "altSpellings": [
-      "Karim"
-    ]
-  },
-  "Kartik": {
-    "category": "South Asian / Indian",
-    "pronunciation": "KAR-tik",
-    "altSpellings": [
-      "Karthik"
-    ]
-  },
   "Kasper": {
     "category": "Norse / Scandinavian",
     "pronunciation": "KAS-per",
     "altSpellings": [
       "Casper"
     ]
-  },
-  "Katsuro": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "kaht-SOO-roh",
-    "altSpellings": []
   },
   "Kay": {
     "category": "Short & Strong (2–4 letters)",
@@ -5974,11 +5030,6 @@
       "Keagan"
     ]
   },
-  "Kei": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "KAY",
-    "altSpellings": []
-  },
   "Keith": {
     "category": "Classic / Traditional (English)",
     "pronunciation": "KEETH",
@@ -5991,11 +5042,6 @@
       "Kellen"
     ]
   },
-  "Kenji": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "KEN-jee",
-    "altSpellings": []
-  },
   "Kenneth": {
     "category": "Classic / Traditional (English)",
     "pronunciation": "KEN-uth",
@@ -6003,39 +5049,12 @@
       "Kennith"
     ]
   },
-  "Kentaro": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "ken-TAH-roh",
-    "altSpellings": []
-  },
-  "Keshav": {
-    "category": "South Asian / Indian",
-    "pronunciation": "KAY-shuv",
-    "altSpellings": []
-  },
   "Kevin": {
     "category": "Classic / Traditional (English)",
     "pronunciation": "KEV-in",
     "altSpellings": [
       "Kevan"
     ]
-  },
-  "Khalid": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "KAH-leed",
-    "altSpellings": []
-  },
-  "Khalil": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "kuh-LEEL",
-    "altSpellings": [
-      "Kahlil"
-    ]
-  },
-  "Ki": {
-    "category": "East Asian — Korean",
-    "pronunciation": "KEE",
-    "altSpellings": []
   },
   "Kiefer": {
     "category": "Celtic / Irish / Scottish",
@@ -6066,16 +5085,6 @@
     "pronunciation": "KIP",
     "altSpellings": []
   },
-  "Kishan": {
-    "category": "South Asian / Indian",
-    "pronunciation": "KISH-un",
-    "altSpellings": []
-  },
-  "Kishi": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "KEE-shee",
-    "altSpellings": []
-  },
   "Kit": {
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "KIT",
@@ -6103,21 +5112,6 @@
     "pronunciation": "KOH-ah",
     "altSpellings": []
   },
-  "Kofi": {
-    "category": "African Origin",
-    "pronunciation": "KOH-fee",
-    "altSpellings": []
-  },
-  "Koji": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "KOH-jee",
-    "altSpellings": []
-  },
-  "Kojo": {
-    "category": "African Origin",
-    "pronunciation": "KOH-joh",
-    "altSpellings": []
-  },
   "Konrad": {
     "category": "German / Dutch",
     "pronunciation": "KON-rad",
@@ -6131,26 +5125,6 @@
     "altSpellings": [
       "Constantine"
     ]
-  },
-  "Kosuke": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "koh-SOO-keh",
-    "altSpellings": []
-  },
-  "Krishna": {
-    "category": "South Asian / Indian",
-    "pronunciation": "KRISH-nuh",
-    "altSpellings": []
-  },
-  "Kumar": {
-    "category": "South Asian / Indian",
-    "pronunciation": "KOO-mar",
-    "altSpellings": []
-  },
-  "Kwame": {
-    "category": "African Origin",
-    "pronunciation": "KWAH-may",
-    "altSpellings": []
   },
   "Kyle": {
     "category": "Classic / Traditional (English)",
@@ -6182,19 +5156,9 @@
     "pronunciation": "LAYK",
     "altSpellings": []
   },
-  "Lakshman": {
-    "category": "South Asian / Indian",
-    "pronunciation": "LUKSH-mun",
-    "altSpellings": []
-  },
   "Lambert": {
     "category": "Vintage / Old-Fashioned Revival",
     "pronunciation": "LAM-bert",
-    "altSpellings": []
-  },
-  "Lamine": {
-    "category": "African Origin",
-    "pronunciation": "lah-MEEN",
     "altSpellings": []
   },
   "Landon": {
@@ -6203,11 +5167,6 @@
     "altSpellings": [
       "Landen"
     ]
-  },
-  "Lang": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "LANG",
-    "altSpellings": []
   },
   "Lark": {
     "category": "Nature-Inspired",
@@ -6218,20 +5177,6 @@
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "LARSS",
     "altSpellings": []
-  },
-  "Lateef": {
-    "category": "African Origin",
-    "pronunciation": "lah-TEEF",
-    "altSpellings": [
-      "Latif"
-    ]
-  },
-  "Latif": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "lah-TEEF",
-    "altSpellings": [
-      "Lateef"
-    ]
   },
   "Laurent": {
     "category": "French / Romance",
@@ -6267,22 +5212,12 @@
       "Leigh"
     ]
   },
-  "Lei": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "LAY",
-    "altSpellings": []
-  },
   "Leif": {
     "category": "Norse / Scandinavian",
     "pronunciation": "LAYF",
     "altSpellings": [
       "Lief"
     ]
-  },
-  "Lekan": {
-    "category": "African Origin",
-    "pronunciation": "LEH-kahn",
-    "altSpellings": []
   },
   "Len": {
     "category": "Short & Strong (2–4 letters)",
@@ -6314,11 +5249,6 @@
     "pronunciation": "lee-OH-nis",
     "altSpellings": []
   },
-  "Lerato": {
-    "category": "African Origin",
-    "pronunciation": "leh-RAH-toh",
-    "altSpellings": []
-  },
   "Leroy": {
     "category": "Vintage / Old-Fashioned Revival",
     "pronunciation": "LEE-roy",
@@ -6348,24 +5278,9 @@
       "Louis"
     ]
   },
-  "Li": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "LEE",
-    "altSpellings": []
-  },
   "Liam": {
     "category": "Modern / Trending (US)",
     "pronunciation": "LEE-um",
-    "altSpellings": []
-  },
-  "Liang": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "lee-AHNG",
-    "altSpellings": []
-  },
-  "Liao": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "lee-OW",
     "altSpellings": []
   },
   "Lief": {
@@ -6375,21 +5290,9 @@
       "Leif"
     ]
   },
-  "Lin": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "LIN",
-    "altSpellings": [
-      "Linn"
-    ]
-  },
   "Lincoln": {
     "category": "Modern / Trending (US)",
     "pronunciation": "LING-kun",
-    "altSpellings": []
-  },
-  "Liu": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "LYOH",
     "altSpellings": []
   },
   "Lloyd": {
@@ -6407,11 +5310,6 @@
   "Logan": {
     "category": "Classic / Traditional (English)",
     "pronunciation": "LOH-gun",
-    "altSpellings": []
-  },
-  "Long": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "LAWNG",
     "altSpellings": []
   },
   "Lorcan": {
@@ -6512,11 +5410,6 @@
     "pronunciation": "LOOK",
     "altSpellings": []
   },
-  "Luqman": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "LOOK-mahn",
-    "altSpellings": []
-  },
   "Lynx": {
     "category": "Nature-Inspired",
     "pronunciation": "LINKS",
@@ -6551,37 +5444,9 @@
     "pronunciation": "MAD-oks",
     "altSpellings": []
   },
-  "Madhav": {
-    "category": "South Asian / Indian",
-    "pronunciation": "MUHD-huv",
-    "altSpellings": []
-  },
   "Magnus": {
     "category": "Greek / Latin Origin",
     "pronunciation": "MAG-nus",
-    "altSpellings": []
-  },
-  "Mahdi": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "MAH-dee",
-    "altSpellings": []
-  },
-  "Mahmoud": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "mah-MOOD",
-    "altSpellings": [
-      "Mahmud",
-      "Mehmood"
-    ]
-  },
-  "Makena": {
-    "category": "African Origin",
-    "pronunciation": "muh-KAY-nuh",
-    "altSpellings": []
-  },
-  "Makoto": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "mah-KOH-toh",
     "altSpellings": []
   },
   "Mal": {
@@ -6601,34 +5466,10 @@
     "pronunciation": "MAL-kum",
     "altSpellings": []
   },
-  "Malek": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "MAH-lek",
-    "altSpellings": [
-      "Malik"
-    ]
-  },
   "Manfred": {
     "category": "German / Dutch",
     "pronunciation": "MAN-fred",
     "altSpellings": []
-  },
-  "Manoj": {
-    "category": "South Asian / Indian",
-    "pronunciation": "muh-NOHJ",
-    "altSpellings": []
-  },
-  "Mansa": {
-    "category": "African Origin",
-    "pronunciation": "MAHN-sah",
-    "altSpellings": []
-  },
-  "Mansour": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "man-SOOR",
-    "altSpellings": [
-      "Mansoor"
-    ]
   },
   "Manuel": {
     "category": "Spanish / Portuguese / Italian",
@@ -6706,21 +5547,6 @@
   "Marvin": {
     "category": "Vintage / Old-Fashioned Revival",
     "pronunciation": "MAR-vin",
-    "altSpellings": []
-  },
-  "Masaki": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "mah-SAH-kee",
-    "altSpellings": []
-  },
-  "Masashi": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "mah-SAH-shee",
-    "altSpellings": []
-  },
-  "Masato": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "mah-SAH-toh",
     "altSpellings": []
   },
   "Mason": {
@@ -6835,27 +5661,10 @@
     "pronunciation": "MAKS-wel",
     "altSpellings": []
   },
-  "Mbachu": {
-    "category": "African Origin",
-    "pronunciation": "um-BAH-choo",
-    "altSpellings": []
-  },
-  "Mbeki": {
-    "category": "African Origin",
-    "pronunciation": "um-BEK-ee",
-    "altSpellings": []
-  },
   "Meadow": {
     "category": "Nature-Inspired",
     "pronunciation": "MED-oh",
     "altSpellings": []
-  },
-  "Mekhi": {
-    "category": "African Origin",
-    "pronunciation": "muh-KYE",
-    "altSpellings": [
-      "Mekhai"
-    ]
   },
   "Mel": {
     "category": "Short & Strong (2–4 letters)",
@@ -6913,11 +5722,6 @@
     "pronunciation": "MIK-el",
     "altSpellings": []
   },
-  "Milan": {
-    "category": "South Asian / Indian",
-    "pronunciation": "MY-lun",
-    "altSpellings": []
-  },
   "Miles": {
     "category": "Classic / Traditional (English)",
     "pronunciation": "MYLZ",
@@ -6925,29 +5729,9 @@
       "Myles"
     ]
   },
-  "Milind": {
-    "category": "South Asian / Indian",
-    "pronunciation": "mih-LIND",
-    "altSpellings": []
-  },
   "Miller": {
     "category": "Modern / Trending (US)",
     "pronunciation": "MIL-er",
-    "altSpellings": []
-  },
-  "Min": {
-    "category": "East Asian — Korean",
-    "pronunciation": "MIN",
-    "altSpellings": []
-  },
-  "Minato": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "mee-NAH-toh",
-    "altSpellings": []
-  },
-  "Ming": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "MING",
     "altSpellings": []
   },
   "Miroslav": {
@@ -6963,11 +5747,6 @@
   "Mitchell": {
     "category": "Classic / Traditional (English)",
     "pronunciation": "MITCH-ul",
-    "altSpellings": []
-  },
-  "Mohan": {
-    "category": "South Asian / Indian",
-    "pronunciation": "MOH-hun",
     "altSpellings": []
   },
   "Montgomery": {
@@ -7014,23 +5793,6 @@
     "pronunciation": "MUR-ee",
     "altSpellings": []
   },
-  "Musa": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "MOO-sah",
-    "altSpellings": []
-  },
-  "Mustafa": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "moo-STAH-fah",
-    "altSpellings": [
-      "Mostafa"
-    ]
-  },
-  "Mwangi": {
-    "category": "African Origin",
-    "pronunciation": "MWAHN-gee",
-    "altSpellings": []
-  },
   "Myles": {
     "category": "Vintage / Old-Fashioned Revival",
     "pronunciation": "MYLZ",
@@ -7038,52 +5800,10 @@
       "Miles"
     ]
   },
-  "Myung": {
-    "category": "East Asian — Korean",
-    "pronunciation": "MYUNG",
-    "altSpellings": []
-  },
-  "Nabil": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "nah-BEEL",
-    "altSpellings": []
-  },
-  "Nalin": {
-    "category": "South Asian / Indian",
-    "pronunciation": "NAH-lin",
-    "altSpellings": []
-  },
-  "Nam": {
-    "category": "East Asian — Korean",
-    "pronunciation": "NAHM",
-    "altSpellings": []
-  },
-  "Naoki": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "nah-OH-kee",
-    "altSpellings": []
-  },
-  "Naoto": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "nah-OH-toh",
-    "altSpellings": []
-  },
   "Nash": {
     "category": "Modern / Trending (US)",
     "pronunciation": "NASH",
     "altSpellings": []
-  },
-  "Nasim": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "nah-SEEM",
-    "altSpellings": []
-  },
-  "Nasser": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "NAH-ser",
-    "altSpellings": [
-      "Nasir"
-    ]
   },
   "Nathan": {
     "category": "Classic / Traditional (English)",
@@ -7107,13 +5827,6 @@
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "NED",
     "altSpellings": []
-  },
-  "Neel": {
-    "category": "South Asian / Indian",
-    "pronunciation": "NEEL",
-    "altSpellings": [
-      "Neil"
-    ]
   },
   "Neil": {
     "category": "Classic / Traditional (English)",
@@ -7169,11 +5882,6 @@
       "Nicolas"
     ]
   },
-  "Nikhil": {
-    "category": "South Asian / Indian",
-    "pronunciation": "NIK-hil",
-    "altSpellings": []
-  },
   "Nikita": {
     "category": "Slavic / Eastern European",
     "pronunciation": "nih-KEE-tuh",
@@ -7201,24 +5909,9 @@
     "pronunciation": "NILZ",
     "altSpellings": []
   },
-  "Niraj": {
-    "category": "South Asian / Indian",
-    "pronunciation": "nih-RAHJ",
-    "altSpellings": []
-  },
-  "Nitin": {
-    "category": "South Asian / Indian",
-    "pronunciation": "NIT-in",
-    "altSpellings": []
-  },
   "Njord": {
     "category": "Norse / Scandinavian",
     "pronunciation": "NYORD",
-    "altSpellings": []
-  },
-  "Nnamdi": {
-    "category": "African Origin",
-    "pronunciation": "NAHM-dee",
     "altSpellings": []
   },
   "Noah": {
@@ -7227,16 +5920,6 @@
     "altSpellings": [
       "Noa"
     ]
-  },
-  "Nobu": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "NOH-boo",
-    "altSpellings": []
-  },
-  "Nobuo": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "noh-BOO-oh",
-    "altSpellings": []
   },
   "Noe": {
     "category": "Short & Strong (2–4 letters)",
@@ -7259,16 +5942,6 @@
     "pronunciation": "NOH-lun",
     "altSpellings": []
   },
-  "Nonso": {
-    "category": "African Origin",
-    "pronunciation": "NON-soh",
-    "altSpellings": []
-  },
-  "Nori": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "NOR-ee",
-    "altSpellings": []
-  },
   "Norman": {
     "category": "Classic / Traditional (English)",
     "pronunciation": "NOR-mun",
@@ -7281,11 +5954,6 @@
       "Noe",
       "Noah"
     ]
-  },
-  "Nwachukwu": {
-    "category": "African Origin",
-    "pronunciation": "nwah-CHOOK-woo",
-    "altSpellings": []
   },
   "Nye": {
     "category": "Short & Strong (2–4 letters)",
@@ -7307,11 +5975,6 @@
   "Obi": {
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "OH-bee",
-    "altSpellings": []
-  },
-  "Obinna": {
-    "category": "African Origin",
-    "pronunciation": "oh-BIN-ah",
     "altSpellings": []
   },
   "Ocean": {
@@ -7337,11 +6000,6 @@
   "Ode": {
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "OHD",
-    "altSpellings": []
-  },
-  "Odion": {
-    "category": "African Origin",
-    "pronunciation": "oh-DEE-on",
     "altSpellings": []
   },
   "Oisin": {
@@ -7383,38 +6041,6 @@
     "altSpellings": [
       "Oliver"
     ]
-  },
-  "Olumide": {
-    "category": "African Origin",
-    "pronunciation": "oh-loo-MEE-day",
-    "altSpellings": []
-  },
-  "Olusegun": {
-    "category": "African Origin",
-    "pronunciation": "oh-loo-SHAY-goon",
-    "altSpellings": []
-  },
-  "Oluwaseun": {
-    "category": "African Origin",
-    "pronunciation": "oh-loo-wah-SHAY-oon",
-    "altSpellings": []
-  },
-  "Om": {
-    "category": "South Asian / Indian",
-    "pronunciation": "OHM",
-    "altSpellings": []
-  },
-  "Omar": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "OH-mar",
-    "altSpellings": [
-      "Umar"
-    ]
-  },
-  "Omari": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "oh-MAR-ee",
-    "altSpellings": []
   },
   "Onyx": {
     "category": "Nature-Inspired",
@@ -7459,11 +6085,6 @@
     "altSpellings": [
       "Osker"
     ]
-  },
-  "Osei": {
-    "category": "African Origin",
-    "pronunciation": "oh-SAY",
-    "altSpellings": []
   },
   "Osiris": {
     "category": "Celestial / Mythology",
@@ -7518,18 +6139,13 @@
     ]
   },
   "Pan": {
-    "category": "East Asian — Chinese",
+    "category": "Celestial / Mythology",
     "pronunciation": "PAN",
     "altSpellings": []
   },
   "Paolo": {
     "category": "Spanish / Portuguese / Italian",
     "pronunciation": "POW-loh",
-    "altSpellings": []
-  },
-  "Park": {
-    "category": "East Asian — Korean",
-    "pronunciation": "PARK",
     "altSpellings": []
   },
   "Parker": {
@@ -7564,11 +6180,6 @@
     "pronunciation": "PAWL",
     "altSpellings": []
   },
-  "Pavan": {
-    "category": "South Asian / Indian",
-    "pronunciation": "PUH-vun",
-    "altSpellings": []
-  },
   "Pavel": {
     "category": "Slavic / Eastern European",
     "pronunciation": "PAH-vel",
@@ -7597,11 +6208,6 @@
   "Pedro": {
     "category": "Spanish / Portuguese / Italian",
     "pronunciation": "PAY-droh",
-    "altSpellings": []
-  },
-  "Peng": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "PUNG",
     "altSpellings": []
   },
   "Per": {
@@ -7752,29 +6358,9 @@
     "pronunciation": "poh-SY-dun",
     "altSpellings": []
   },
-  "Pranav": {
-    "category": "South Asian / Indian",
-    "pronunciation": "PRUH-nuv",
-    "altSpellings": [
-      "Pranava"
-    ]
-  },
-  "Prateek": {
-    "category": "South Asian / Indian",
-    "pronunciation": "pruh-TEEK",
-    "altSpellings": [
-      "Prateik",
-      "Pratik"
-    ]
-  },
   "Preston": {
     "category": "Classic / Traditional (English)",
     "pronunciation": "PRES-tun",
-    "altSpellings": []
-  },
-  "Prithvi": {
-    "category": "South Asian / Indian",
-    "pronunciation": "PRITH-vee",
     "altSpellings": []
   },
   "Ptolemy": {
@@ -7796,24 +6382,6 @@
       "Padraig",
       "Patrick"
     ]
-  },
-  "Qasim": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "KAH-sim",
-    "altSpellings": [
-      "Qassim",
-      "Kasim"
-    ]
-  },
-  "Qiang": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "chee-AHNG",
-    "altSpellings": []
-  },
-  "Qing": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "CHING",
-    "altSpellings": []
   },
   "Quentin": {
     "category": "Modern / Trending (US)",
@@ -7866,18 +6434,6 @@
       "Rafail"
     ]
   },
-  "Rafi": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "RAH-fee",
-    "altSpellings": [
-      "Raffi"
-    ]
-  },
-  "Raghav": {
-    "category": "South Asian / Indian",
-    "pronunciation": "RUH-guv",
-    "altSpellings": []
-  },
   "Ragnar": {
     "category": "Norse / Scandinavian",
     "pronunciation": "RAG-nar",
@@ -7890,39 +6446,12 @@
       "Ragnvold"
     ]
   },
-  "Rahel": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "RAH-hel",
-    "altSpellings": [
-      "Rachel"
-    ]
-  },
-  "Rajan": {
-    "category": "South Asian / Indian",
-    "pronunciation": "RAH-jun",
-    "altSpellings": []
-  },
-  "Rajat": {
-    "category": "South Asian / Indian",
-    "pronunciation": "RAH-jut",
-    "altSpellings": []
-  },
-  "Rajesh": {
-    "category": "South Asian / Indian",
-    "pronunciation": "ruh-JESH",
-    "altSpellings": []
-  },
   "Ralph": {
     "category": "Classic / Traditional (English)",
     "pronunciation": "RALF",
     "altSpellings": [
       "Rafe"
     ]
-  },
-  "Ramesh": {
-    "category": "South Asian / Indian",
-    "pronunciation": "RUH-mesh",
-    "altSpellings": []
   },
   "Raoul": {
     "category": "French / Romance",
@@ -7948,13 +6477,6 @@
       "Rafael"
     ]
   },
-  "Rashid": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "rah-SHEED",
-    "altSpellings": [
-      "Rasheed"
-    ]
-  },
   "Ravine": {
     "category": "Nature-Inspired",
     "pronunciation": "ruh-VEEN",
@@ -7965,14 +6487,6 @@
     "pronunciation": "RAY",
     "altSpellings": [
       "Rae"
-    ]
-  },
-  "Rayan": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "RY-an",
-    "altSpellings": [
-      "Rayaan",
-      "Ryan"
     ]
   },
   "Raymond": {
@@ -8043,22 +6557,12 @@
       "Remmy"
     ]
   },
-  "Ren": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "REN",
-    "altSpellings": []
-  },
   "Renaud": {
     "category": "French / Romance",
     "pronunciation": "ruh-NOH",
     "altSpellings": [
       "Renault"
     ]
-  },
-  "Renji": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "REN-jee",
-    "altSpellings": []
   },
   "René": {
     "category": "French / Romance",
@@ -8098,13 +6602,6 @@
     "pronunciation": "RICH-erd",
     "altSpellings": []
   },
-  "Rida": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "REE-dah",
-    "altSpellings": [
-      "Ridha"
-    ]
-  },
   "Rider": {
     "category": "Modern / Trending (US)",
     "pronunciation": "RY-der",
@@ -8117,27 +6614,12 @@
     "pronunciation": "RIJ",
     "altSpellings": []
   },
-  "Rintaro": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "rin-TAH-roh",
-    "altSpellings": []
-  },
   "Riordan": {
     "category": "Celtic / Irish / Scottish",
     "pronunciation": "REER-dun",
     "altSpellings": [
       "Rearden"
     ]
-  },
-  "Rishi": {
-    "category": "South Asian / Indian",
-    "pronunciation": "RISH-ee",
-    "altSpellings": []
-  },
-  "Ritesh": {
-    "category": "South Asian / Indian",
-    "pronunciation": "RIT-esh",
-    "altSpellings": []
   },
   "River": {
     "category": "Modern / Trending (US)",
@@ -8192,16 +6674,6 @@
   "Roger": {
     "category": "Classic / Traditional (English)",
     "pronunciation": "RAH-jer",
-    "altSpellings": []
-  },
-  "Rohan": {
-    "category": "South Asian / Indian",
-    "pronunciation": "ROH-hun",
-    "altSpellings": []
-  },
-  "Rohit": {
-    "category": "South Asian / Indian",
-    "pronunciation": "ROH-hit",
     "altSpellings": []
   },
   "Roland": {
@@ -8319,11 +6791,6 @@
       "Rudolfo"
     ]
   },
-  "Rudra": {
-    "category": "South Asian / Indian",
-    "pronunciation": "ROO-druh",
-    "altSpellings": []
-  },
   "Rue": {
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "ROO",
@@ -8332,11 +6799,6 @@
   "Rufus": {
     "category": "Greek / Latin Origin",
     "pronunciation": "ROO-fus",
-    "altSpellings": []
-  },
-  "Rui": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "ROO-ee",
     "altSpellings": []
   },
   "Rupert": {
@@ -8388,83 +6850,15 @@
       "Riker"
     ]
   },
-  "Ryo": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "REE-oh",
-    "altSpellings": []
-  },
-  "Ryota": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "ryoh-TAH",
-    "altSpellings": []
-  },
-  "Ryuichi": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "ryoo-EE-chee",
-    "altSpellings": []
-  },
-  "Ryuki": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "RYOO-kee",
-    "altSpellings": []
-  },
-  "Saad": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "SAHD",
-    "altSpellings": [
-      "Sa'ad"
-    ]
-  },
-  "Sabir": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "suh-BEER",
-    "altSpellings": [
-      "Sabeer"
-    ]
-  },
   "Sage": {
     "category": "Nature-Inspired",
     "pronunciation": "SAYJ",
     "altSpellings": []
   },
-  "Sahil": {
-    "category": "South Asian / Indian",
-    "pronunciation": "suh-HEEL",
-    "altSpellings": [
-      "Sahel"
-    ]
-  },
-  "Sai": {
-    "category": "South Asian / Indian",
-    "pronunciation": "SY",
-    "altSpellings": []
-  },
-  "Salim": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "suh-LEEM",
-    "altSpellings": [
-      "Saleem"
-    ]
-  },
   "Sam": {
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "SAM",
     "altSpellings": []
-  },
-  "Sameer": {
-    "category": "South Asian / Indian",
-    "pronunciation": "suh-MEER",
-    "altSpellings": [
-      "Samir"
-    ]
-  },
-  "Sami": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "SAH-mee",
-    "altSpellings": [
-      "Samy",
-      "Sammy"
-    ]
   },
   "Samuel": {
     "category": "Classic / Traditional (English)",
@@ -8479,51 +6873,14 @@
       "Xander"
     ]
   },
-  "Sanjay": {
-    "category": "South Asian / Indian",
-    "pronunciation": "SAHN-jay",
-    "altSpellings": []
-  },
-  "Sanket": {
-    "category": "South Asian / Indian",
-    "pronunciation": "SUN-ket",
-    "altSpellings": []
-  },
   "Santiago": {
     "category": "Spanish / Portuguese / Italian",
     "pronunciation": "san-tee-AH-goh",
     "altSpellings": []
   },
-  "Sarang": {
-    "category": "South Asian / Indian",
-    "pronunciation": "suh-RUNG",
-    "altSpellings": []
-  },
-  "Sato": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "SAH-toh",
-    "altSpellings": []
-  },
-  "Satoshi": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "suh-TOH-shee",
-    "altSpellings": []
-  },
   "Saturn": {
     "category": "Celestial / Mythology",
     "pronunciation": "SAT-ern",
-    "altSpellings": []
-  },
-  "Saud": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "sah-OOD",
-    "altSpellings": [
-      "Saoud"
-    ]
-  },
-  "Saurabh": {
-    "category": "South Asian / Indian",
-    "pronunciation": "SOW-rubh",
     "altSpellings": []
   },
   "Sawyer": {
@@ -8564,22 +6921,12 @@
       "Sebastien"
     ]
   },
-  "Seiji": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "SAY-jee",
-    "altSpellings": []
-  },
   "Selene": {
     "category": "Celestial / Mythology",
     "pronunciation": "suh-LEE-nee",
     "altSpellings": [
       "Selena"
     ]
-  },
-  "Seok": {
-    "category": "East Asian — Korean",
-    "pronunciation": "SUK",
-    "altSpellings": []
   },
   "Septimus": {
     "category": "Greek / Latin Origin",
@@ -8609,31 +6956,9 @@
     "pronunciation": "SETH",
     "altSpellings": []
   },
-  "Seun": {
-    "category": "African Origin",
-    "pronunciation": "SHUN",
-    "altSpellings": []
-  },
-  "Seung": {
-    "category": "East Asian — Korean",
-    "pronunciation": "SUNG",
-    "altSpellings": []
-  },
   "Seymour": {
     "category": "Vintage / Old-Fashioned Revival",
     "pronunciation": "SEE-mor",
-    "altSpellings": []
-  },
-  "Shaan": {
-    "category": "South Asian / Indian",
-    "pronunciation": "SHAHN",
-    "altSpellings": [
-      "Shan"
-    ]
-  },
-  "Sharad": {
-    "category": "South Asian / Indian",
-    "pronunciation": "SHUH-rud",
     "altSpellings": []
   },
   "Shay": {
@@ -8644,67 +6969,15 @@
       "Shea"
     ]
   },
-  "Shen": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "SHEN",
-    "altSpellings": []
-  },
-  "Sheng": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "SHUNG",
-    "altSpellings": []
-  },
   "Sheridan": {
     "category": "Celtic / Irish / Scottish",
     "pronunciation": "SHEH-rih-dun",
-    "altSpellings": []
-  },
-  "Shi": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "SHEE",
-    "altSpellings": []
-  },
-  "Shin": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "SHIN",
-    "altSpellings": []
-  },
-  "Shiro": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "SHEE-roh",
-    "altSpellings": []
-  },
-  "Shiva": {
-    "category": "South Asian / Indian",
-    "pronunciation": "SHEE-vuh",
-    "altSpellings": []
-  },
-  "Sho": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "SHOH",
     "altSpellings": []
   },
   "Sholto": {
     "category": "Celtic / Irish / Scottish",
     "pronunciation": "SHOL-toh",
     "altSpellings": []
-  },
-  "Shota": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "SHOH-tah",
-    "altSpellings": []
-  },
-  "Shyam": {
-    "category": "South Asian / Indian",
-    "pronunciation": "SHYAHM",
-    "altSpellings": []
-  },
-  "Siddharth": {
-    "category": "South Asian / Indian",
-    "pronunciation": "sid-DARTH",
-    "altSpellings": [
-      "Siddhartha"
-    ]
   },
   "Sidney": {
     "category": "Vintage / Old-Fashioned Revival",
@@ -8782,19 +7055,9 @@
     "pronunciation": "SAH-kruh-teez",
     "altSpellings": []
   },
-  "Soichi": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "SOH-ee-chee",
-    "altSpellings": []
-  },
   "Sol": {
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "SOHL",
-    "altSpellings": []
-  },
-  "Sola": {
-    "category": "African Origin",
-    "pronunciation": "SOH-lah",
     "altSpellings": []
   },
   "Solaris": {
@@ -8809,16 +7072,6 @@
       "Salomon"
     ]
   },
-  "Soo": {
-    "category": "East Asian — Korean",
-    "pronunciation": "SOO",
-    "altSpellings": []
-  },
-  "Sora": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "SOR-uh",
-    "altSpellings": []
-  },
   "Soren": {
     "category": "Norse / Scandinavian",
     "pronunciation": "SOR-en",
@@ -8826,11 +7079,6 @@
       "Søren",
       "Sorin"
     ]
-  },
-  "Sota": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "SOH-tah",
-    "altSpellings": []
   },
   "Spencer": {
     "category": "Classic / Traditional (English)",
@@ -8908,64 +7156,14 @@
       "Stewart"
     ]
   },
-  "Sufyan": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "soof-YAHN",
-    "altSpellings": [
-      "Sufian"
-    ]
-  },
-  "Sulayman": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "soo-lay-MAHN",
-    "altSpellings": [
-      "Suleiman",
-      "Sulaiman",
-      "Suleyman"
-    ]
-  },
   "Sullivan": {
     "category": "Modern / Trending (US)",
     "pronunciation": "SUL-ih-vun",
     "altSpellings": []
   },
-  "Sultan": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "sul-TAHN",
-    "altSpellings": []
-  },
-  "Sumit": {
-    "category": "South Asian / Indian",
-    "pronunciation": "SOO-mit",
-    "altSpellings": [
-      "Sumeet"
-    ]
-  },
   "Summit": {
     "category": "Nature-Inspired",
     "pronunciation": "SUH-mit",
-    "altSpellings": []
-  },
-  "Sung": {
-    "category": "East Asian — Korean",
-    "pronunciation": "SUNG",
-    "altSpellings": []
-  },
-  "Suraj": {
-    "category": "South Asian / Indian",
-    "pronunciation": "SOOR-uj",
-    "altSpellings": [
-      "Sooraj"
-    ]
-  },
-  "Suresh": {
-    "category": "South Asian / Indian",
-    "pronunciation": "soo-RESH",
-    "altSpellings": []
-  },
-  "Suzuki": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "soo-ZOO-kee",
     "altSpellings": []
   },
   "Svein": {
@@ -9027,34 +7225,9 @@
       "Teague"
     ]
   },
-  "Tae": {
-    "category": "East Asian — Korean",
-    "pronunciation": "TAY",
-    "altSpellings": []
-  },
   "Taj": {
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "TAHJ",
-    "altSpellings": []
-  },
-  "Taka": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "TAH-kah",
-    "altSpellings": []
-  },
-  "Takahiro": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "tah-kah-HEE-roh",
-    "altSpellings": []
-  },
-  "Takashi": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "tah-KAH-shee",
-    "altSpellings": []
-  },
-  "Takeru": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "tah-KEH-roo",
     "altSpellings": []
   },
   "Talon": {
@@ -9075,42 +7248,12 @@
     "pronunciation": "TAN-er",
     "altSpellings": []
   },
-  "Tao": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "TOW",
-    "altSpellings": [
-      "Dao"
-    ]
-  },
   "Taran": {
     "category": "Celtic / Irish / Scottish",
     "pronunciation": "TAR-un",
     "altSpellings": [
       "Tarran"
     ]
-  },
-  "Tariq": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "tah-REEK",
-    "altSpellings": [
-      "Tarik",
-      "Tarek"
-    ]
-  },
-  "Taro": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "TAH-roh",
-    "altSpellings": []
-  },
-  "Tarun": {
-    "category": "South Asian / Indian",
-    "pronunciation": "tuh-ROON",
-    "altSpellings": []
-  },
-  "Tatsuo": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "taht-SOO-oh",
-    "altSpellings": []
   },
   "Tatum": {
     "category": "Modern / Trending (US)",
@@ -9125,21 +7268,6 @@
       "Tighe",
       "Tadhg"
     ]
-  },
-  "Tej": {
-    "category": "South Asian / Indian",
-    "pronunciation": "TAYJ",
-    "altSpellings": []
-  },
-  "Temi": {
-    "category": "African Origin",
-    "pronunciation": "TEH-mee",
-    "altSpellings": []
-  },
-  "Teru": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "TEH-roo",
-    "altSpellings": []
   },
   "Tex": {
     "category": "Short & Strong (2–4 letters)",
@@ -9283,22 +7411,12 @@
     "pronunciation": "TY-tus",
     "altSpellings": []
   },
-  "Tobi": {
-    "category": "African Origin",
-    "pronunciation": "TOH-bee",
-    "altSpellings": []
-  },
   "Tobias": {
     "category": "Modern / Trending (US)",
     "pronunciation": "toh-BY-us",
     "altSpellings": [
       "Tobiah"
     ]
-  },
-  "Tochi": {
-    "category": "African Origin",
-    "pronunciation": "TOH-chee",
-    "altSpellings": []
   },
   "Todd": {
     "category": "Classic / Traditional (English)",
@@ -9316,16 +7434,6 @@
     "altSpellings": [
       "Thomas"
     ]
-  },
-  "Tomo": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "TOH-moh",
-    "altSpellings": []
-  },
-  "Tomohiro": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "toh-moh-HEE-roh",
-    "altSpellings": []
   },
   "Torben": {
     "category": "Norse / Scandinavian",
@@ -9417,11 +7525,6 @@
     "pronunciation": "TY-ruh",
     "altSpellings": []
   },
-  "Uday": {
-    "category": "South Asian / Indian",
-    "pronunciation": "oo-DAY",
-    "altSpellings": []
-  },
   "Ulf": {
     "category": "Norse / Scandinavian",
     "pronunciation": "OOLF",
@@ -9444,13 +7547,6 @@
     "pronunciation": "yoo-LIS-eez",
     "altSpellings": []
   },
-  "Umar": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "OO-mar",
-    "altSpellings": [
-      "Omar"
-    ]
-  },
   "Urban": {
     "category": "Greek / Latin Origin",
     "pronunciation": "UR-bun",
@@ -9461,19 +7557,9 @@
     "pronunciation": "yoo-RY-uh",
     "altSpellings": []
   },
-  "Uzo": {
-    "category": "African Origin",
-    "pronunciation": "OO-zoh",
-    "altSpellings": []
-  },
   "Vadim": {
     "category": "Slavic / Eastern European",
     "pronunciation": "vah-DEEM",
-    "altSpellings": []
-  },
-  "Vaibhav": {
-    "category": "South Asian / Indian",
-    "pronunciation": "VYE-buv",
     "altSpellings": []
   },
   "Vale": {
@@ -9503,11 +7589,6 @@
   "Van": {
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "VAN",
-    "altSpellings": []
-  },
-  "Vardhan": {
-    "category": "South Asian / Indian",
-    "pronunciation": "VAR-dun",
     "altSpellings": []
   },
   "Vasily": {
@@ -9550,16 +7631,6 @@
     "pronunciation": "VIG-oh",
     "altSpellings": []
   },
-  "Vijay": {
-    "category": "South Asian / Indian",
-    "pronunciation": "vih-JAY",
-    "altSpellings": []
-  },
-  "Vikram": {
-    "category": "South Asian / Indian",
-    "pronunciation": "VIK-rum",
-    "altSpellings": []
-  },
   "Viktor": {
     "category": "Slavic / Eastern European",
     "pronunciation": "VIK-ter",
@@ -9582,19 +7653,9 @@
     "pronunciation": "VIN-sent",
     "altSpellings": []
   },
-  "Viraj": {
-    "category": "South Asian / Indian",
-    "pronunciation": "VEE-rahj",
-    "altSpellings": []
-  },
   "Virgil": {
     "category": "Vintage / Old-Fashioned Revival",
     "pronunciation": "VUR-jul",
-    "altSpellings": []
-  },
-  "Vishal": {
-    "category": "South Asian / Indian",
-    "pronunciation": "vih-SHAHL",
     "altSpellings": []
   },
   "Vitaly": {
@@ -9610,11 +7671,6 @@
   "Viv": {
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "VIV",
-    "altSpellings": []
-  },
-  "Vivek": {
-    "category": "South Asian / Indian",
-    "pronunciation": "vih-VEHK",
     "altSpellings": []
   },
   "Vladimir": {
@@ -9658,11 +7714,6 @@
       "Walter"
     ]
   },
-  "Wang": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "WAHNG",
-    "altSpellings": []
-  },
   "Warren": {
     "category": "Classic / Traditional (English)",
     "pronunciation": "WOR-en",
@@ -9680,19 +7731,9 @@
     "pronunciation": "WAYN",
     "altSpellings": []
   },
-  "Wei": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "WAY",
-    "altSpellings": []
-  },
   "Wells": {
     "category": "Modern / Trending (US)",
     "pronunciation": "WELZ",
-    "altSpellings": []
-  },
-  "Wen": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "WEN",
     "altSpellings": []
   },
   "Wendell": {
@@ -9776,11 +7817,6 @@
     "pronunciation": "WIN",
     "altSpellings": []
   },
-  "Wole": {
-    "category": "African Origin",
-    "pronunciation": "WOH-leh",
-    "altSpellings": []
-  },
   "Wolf": {
     "category": "Nature-Inspired",
     "pronunciation": "WULF",
@@ -9791,11 +7827,6 @@
     "pronunciation": "WULF-gang",
     "altSpellings": []
   },
-  "Woo": {
-    "category": "East Asian — Korean",
-    "pronunciation": "WOO",
-    "altSpellings": []
-  },
   "Woodrow": {
     "category": "Vintage / Old-Fashioned Revival",
     "pronunciation": "WUUD-roh",
@@ -9804,11 +7835,6 @@
   "Wren": {
     "category": "Modern / Trending (US)",
     "pronunciation": "REN",
-    "altSpellings": []
-  },
-  "Wu": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "WOO",
     "altSpellings": []
   },
   "Wyatt": {
@@ -9833,44 +7859,9 @@
       "Xzavier"
     ]
   },
-  "Xian": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "shee-AHN",
-    "altSpellings": []
-  },
-  "Xiao": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "SHYOW",
-    "altSpellings": []
-  },
-  "Xin": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "SHIN",
-    "altSpellings": []
-  },
-  "Xing": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "SHING",
-    "altSpellings": []
-  },
-  "Yamato": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "yah-MAH-toh",
-    "altSpellings": []
-  },
-  "Yang": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "YAHNG",
-    "altSpellings": []
-  },
   "Yannick": {
     "category": "French / Romance",
     "pronunciation": "YAH-nik",
-    "altSpellings": []
-  },
-  "Yao": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "YOW",
     "altSpellings": []
   },
   "Yaroslav": {
@@ -9883,100 +7874,9 @@
     "pronunciation": "YAIR-oh",
     "altSpellings": []
   },
-  "Yash": {
-    "category": "South Asian / Indian",
-    "pronunciation": "YAHSH",
-    "altSpellings": []
-  },
-  "Yaw": {
-    "category": "African Origin",
-    "pronunciation": "YAW",
-    "altSpellings": []
-  },
-  "Yemi": {
-    "category": "African Origin",
-    "pronunciation": "YEH-mee",
-    "altSpellings": []
-  },
-  "Yi": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "YEE",
-    "altSpellings": []
-  },
   "Yngvar": {
     "category": "Norse / Scandinavian",
     "pronunciation": "ING-var",
-    "altSpellings": []
-  },
-  "Yogi": {
-    "category": "South Asian / Indian",
-    "pronunciation": "YOH-gee",
-    "altSpellings": []
-  },
-  "Yong": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "YAWNG",
-    "altSpellings": []
-  },
-  "Yoon": {
-    "category": "East Asian — Korean",
-    "pronunciation": "YOON",
-    "altSpellings": []
-  },
-  "Yoshi": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "YOH-shee",
-    "altSpellings": []
-  },
-  "Yoshio": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "YOH-shee-oh",
-    "altSpellings": []
-  },
-  "Yoto": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "YOH-toh",
-    "altSpellings": []
-  },
-  "Young": {
-    "category": "East Asian — Korean",
-    "pronunciation": "YUNG",
-    "altSpellings": []
-  },
-  "Yousif": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "YOO-sif",
-    "altSpellings": [
-      "Yusuf",
-      "Yousef"
-    ]
-  },
-  "Youssef": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "YOO-sef",
-    "altSpellings": [
-      "Yusuf",
-      "Yousef"
-    ]
-  },
-  "Yu": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "YOO",
-    "altSpellings": []
-  },
-  "Yuan": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "yoo-AHN",
-    "altSpellings": []
-  },
-  "Yue": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "YWEH",
-    "altSpellings": []
-  },
-  "Yuki": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "YOO-kee",
     "altSpellings": []
   },
   "Yul": {
@@ -9987,16 +7887,6 @@
   "Yuri": {
     "category": "Slavic / Eastern European",
     "pronunciation": "YOOR-ee",
-    "altSpellings": []
-  },
-  "Yusuke": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "yoo-SOO-keh",
-    "altSpellings": []
-  },
-  "Yuya": {
-    "category": "East Asian — Japanese",
-    "pronunciation": "YOO-yah",
     "altSpellings": []
   },
   "Yves": {
@@ -10030,13 +7920,6 @@
     "pronunciation": "ZAYN",
     "altSpellings": []
   },
-  "Zayd": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "ZAYD",
-    "altSpellings": [
-      "Zaid"
-    ]
-  },
   "Zayden": {
     "category": "Modern / Trending (US)",
     "pronunciation": "ZAY-dun",
@@ -10065,51 +7948,6 @@
     "pronunciation": "ZOOS",
     "altSpellings": []
   },
-  "Zhan": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "JAHN",
-    "altSpellings": []
-  },
-  "Zhen": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "JEN",
-    "altSpellings": []
-  },
-  "Zheng": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "JUNG",
-    "altSpellings": []
-  },
-  "Zhi": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "JEE",
-    "altSpellings": []
-  },
-  "Zhong": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "JOONG",
-    "altSpellings": []
-  },
-  "Zhou": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "JOH",
-    "altSpellings": []
-  },
-  "Zhu": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "JOO",
-    "altSpellings": []
-  },
-  "Zi": {
-    "category": "East Asian — Chinese",
-    "pronunciation": "ZEE",
-    "altSpellings": []
-  },
-  "Ziad": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "zee-AHD",
-    "altSpellings": []
-  },
   "Zig": {
     "category": "Short & Strong (2–4 letters)",
     "pronunciation": "ZIG",
@@ -10118,18 +7956,6 @@
   "Zion": {
     "category": "Modern / Trending (US)",
     "pronunciation": "ZY-un",
-    "altSpellings": []
-  },
-  "Zubair": {
-    "category": "Arabic / Middle Eastern",
-    "pronunciation": "zoo-BAIR",
-    "altSpellings": [
-      "Zubayr"
-    ]
-  },
-  "Zuri": {
-    "category": "African Origin",
-    "pronunciation": "ZOOR-ee",
     "altSpellings": []
   }
 }
