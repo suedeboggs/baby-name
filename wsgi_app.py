@@ -1,6 +1,7 @@
 import json
 import mimetypes
 import os
+import traceback
 from urllib.parse import parse_qs
 
 import db
@@ -43,9 +44,23 @@ def _static_response(start_response, path):
 
 
 def application(environ, start_response):
+    try:
+        return _route(environ, start_response)
+    except Exception:
+        # Temporary: surface the real traceback as JSON instead of letting
+        # it disappear into the host's generic error page, so failures can
+        # be diagnosed remotely without server log access.
+        tb = traceback.format_exc()
+        return _json_response(start_response, {"error": "server exception", "traceback": tb}, "500 Internal Server Error")
+
+
+def _route(environ, start_response):
     method = environ.get("REQUEST_METHOD", "GET")
     path = environ.get("PATH_INFO", "/")
     query = environ.get("QUERY_STRING", "")
+
+    if method == "GET" and path == "/api/version":
+        return _json_response(start_response, {"version": "878536e-diag"})
 
     if method == "GET" and path == "/api/state":
         user = (parse_qs(query).get("user") or [""])[0]
