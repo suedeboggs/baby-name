@@ -136,8 +136,14 @@
     if (!state || !state.card) return;
     const name = state.card;
     animateCardAway(status, async () => {
-      const s = await postVote(currentUser, name, status);
-      renderState(s);
+      try {
+        const s = await postVote(currentUser, name, status);
+        renderState(s);
+      } catch (err) {
+        console.error("Vote failed, resyncing:", err);
+        alert("That swipe didn't save — reloading your latest state.");
+        await loadState();
+      }
     });
   }
 
@@ -155,8 +161,13 @@
 
   async function undo() {
     if (!state || !state.canUndo) return;
-    const s = await postUndo(currentUser);
-    renderState(s);
+    try {
+      const s = await postUndo(currentUser);
+      renderState(s);
+    } catch (err) {
+      console.error("Undo failed:", err);
+      alert("Undo didn't go through — try again.");
+    }
   }
 
   // ---- Drag handling ----
@@ -259,10 +270,15 @@
     e.preventDefault();
     const name = els.addNameInput.value.trim();
     if (!name) return;
-    const s = await postAddName(currentUser, name);
-    els.addNameInput.value = "";
-    els.addNameForm.classList.add("hidden");
-    renderState(s);
+    try {
+      const s = await postAddName(currentUser, name);
+      els.addNameInput.value = "";
+      els.addNameForm.classList.add("hidden");
+      renderState(s);
+    } catch (err) {
+      console.error("Add name failed:", err);
+      alert("Couldn't add that name — try again.");
+    }
   });
 
   // ---- Login ----

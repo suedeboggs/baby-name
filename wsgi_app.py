@@ -33,7 +33,11 @@ def _static_response(start_response, path):
         body = f.read()
     start_response(
         "200 OK",
-        [("Content-Type", ctype or "application/octet-stream"), ("Content-Length", str(len(body)))],
+        [
+            ("Content-Type", ctype or "application/octet-stream"),
+            ("Content-Length", str(len(body))),
+            ("Cache-Control", "no-store"),
+        ],
     )
     return [body]
 
