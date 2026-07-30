@@ -1,0 +1,6 @@
+baby_names.db
+__pycache__/
+*.pyc
+.DS_Store
+.claude/scheduled_tasks.lock
+.claude/settings.local.json

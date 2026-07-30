@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "baby-names",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["server.py"],
+      "port": 8420
+    }
+  ]
+}

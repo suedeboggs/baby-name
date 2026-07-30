@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+  <title>Baby Boy Names</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- LOGIN SCREEN -->
+    <section id="screen-login" class="screen">
+      <div class="login-card">
+        <div class="login-emoji">👶</div>
+        <h1>Baby Boy Names</h1>
+        <p class="subtitle">Who's swiping?</p>
+        <div class="user-buttons">
+          <button class="user-btn" data-user="marie">Marie</button>
+          <button class="user-btn" data-user="jimmy">Jimmy</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- WELCOME SCREEN -->
+    <section id="screen-welcome" class="screen hidden">
+      <div class="welcome-card">
+        <div class="whoami welcome-whoami">Hi, <span id="welcome-user-label"></span></div>
+        <div class="welcome-emoji">👉👈</div>
+        <p class="welcome-text">Swipe right on names you like, swipe left on ones you don't.</p>
+        <button id="btn-start-swiping" class="primary-btn">Swipe on dem baby names</button>
+      </div>
+    </section>
+
+    <!-- SWIPE SCREEN -->
+    <section id="screen-swipe" class="screen hidden">
+      <header class="topbar">
+        <div class="whoami">Hi, <span id="current-user-label"></span></div>
+        <div class="topbar-actions">
+          <button id="btn-results" class="link-btn">Results</button>
+          <button id="btn-switch-user" class="link-btn">Switch</button>
+        </div>
+      </header>
+
+      <div class="progress-wrap">
+        <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+        <div id="progress-label" class="progress-label"></div>
+      </div>
+
+      <div class="card-stage">
+        <div id="card-empty" class="empty-state hidden">
+          <div class="empty-emoji">🎉</div>
+          <p>You've been through the whole list!</p>
+          <button id="btn-see-results" class="primary-btn">See results</button>
+        </div>
+        <div id="card" class="name-card hidden">
+          <div class="stamp stamp-like">LIKE</div>
+          <div class="stamp stamp-nope">NOPE</div>
+          <div id="card-category" class="card-category"></div>
+          <div id="card-name" class="card-name"></div>
+          <div id="card-pronunciation" class="card-pronunciation"></div>
+          <div id="card-alt-spellings" class="card-alt-spellings"></div>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button id="btn-dislike" class="round-btn dislike-btn" title="Dislike">✕</button>
+        <button id="btn-undo" class="round-btn undo-btn" title="Undo last swipe">↺</button>
+        <button id="btn-like" class="round-btn like-btn" title="Like">♥</button>
+      </div>
+      <p class="hint">Drag the card, use ← → arrow keys, or tap the buttons</p>
+    </section>
+
+    <!-- RESULTS SCREEN -->
+    <section id="screen-results" class="screen hidden">
+      <header class="topbar">
+        <div class="whoami">Results</div>
+        <div class="topbar-actions">
+          <button id="btn-back-to-swipe" class="link-btn">Back to swiping</button>
+        </div>
+      </header>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="matches">Matches <span id="count-matches" class="tab-count"></span></button>
+        <button class="tab-btn" data-tab="onesided">Mismatched <span id="count-onesided" class="tab-count"></span></button>
+        <button class="tab-btn" data-tab="disliked">Both Passed <span id="count-disliked" class="tab-count"></span></button>
+        <button class="tab-btn" data-tab="pending">Still Deciding <span id="count-pending" class="tab-count"></span></button>
+      </div>
+
+      <div class="tab-panels">
+        <div id="panel-matches" class="tab-panel">
+          <ul id="list-matches" class="name-list"></ul>
+          <p id="empty-matches" class="list-empty hidden">No matches yet — keep swiping!</p>
+        </div>
+        <div id="panel-onesided" class="tab-panel hidden">
+          <ul id="list-onesided" class="name-list"></ul>
+          <p id="empty-onesided" class="list-empty hidden">No disagreements yet.</p>
+        </div>
+        <div id="panel-disliked" class="tab-panel hidden">
+          <ul id="list-disliked" class="name-list"></ul>
+          <p id="empty-disliked" class="list-empty hidden">Nothing here yet.</p>
+        </div>
+        <div id="panel-pending" class="tab-panel hidden">
+          <ul id="list-pending" class="name-list"></ul>
+          <p id="empty-pending" class="list-empty hidden">Nothing pending.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
