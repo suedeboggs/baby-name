@@ -52,7 +52,7 @@ def application(environ, start_response):
     if method == "GET" and path == "/api/results":
         return _json_response(start_response, db.get_results())
 
-    if method == "POST" and path in ("/api/vote", "/api/undo"):
+    if method == "POST" and path in ("/api/vote", "/api/undo", "/api/add-name"):
         try:
             length = int(environ.get("CONTENT_LENGTH", 0) or 0)
         except ValueError:
@@ -66,10 +66,10 @@ def application(environ, start_response):
         if path == "/api/vote":
             user = payload.get("user")
             name = payload.get("name")
-            liked = payload.get("liked")
-            if user not in USERS or not name or liked is None:
+            status = payload.get("status")
+            if user not in USERS or not name or status not in db.STATUSES:
                 return _json_response(start_response, {"error": "invalid payload"}, "400 Bad Request")
-            db.cast_vote(user, name, bool(liked))
+            db.cast_vote(user, name, status)
             return _json_response(start_response, db.get_state(user))
 
         if path == "/api/undo":
@@ -77,6 +77,14 @@ def application(environ, start_response):
             if user not in USERS:
                 return _json_response(start_response, {"error": "invalid user"}, "400 Bad Request")
             db.undo_last(user)
+            return _json_response(start_response, db.get_state(user))
+
+        if path == "/api/add-name":
+            user = payload.get("user")
+            name = payload.get("name")
+            if user not in USERS or not name or not str(name).strip():
+                return _json_response(start_response, {"error": "invalid payload"}, "400 Bad Request")
+            db.add_custom_name(user, str(name))
             return _json_response(start_response, db.get_state(user))
 
     if method == "GET":

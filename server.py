@@ -69,10 +69,10 @@ class Handler(BaseHTTPRequestHandler):
         if parsed.path == "/api/vote":
             user = payload.get("user")
             name = payload.get("name")
-            liked = payload.get("liked")
-            if user not in USERS or not name or liked is None:
+            status = payload.get("status")
+            if user not in USERS or not name or status not in db.STATUSES:
                 return self._send_error_json("invalid payload", 400)
-            db.cast_vote(user, name, bool(liked))
+            db.cast_vote(user, name, status)
             return self._send_json(db.get_state(user))
 
         if parsed.path == "/api/undo":
@@ -80,6 +80,14 @@ class Handler(BaseHTTPRequestHandler):
             if user not in USERS:
                 return self._send_error_json("invalid user", 400)
             db.undo_last(user)
+            return self._send_json(db.get_state(user))
+
+        if parsed.path == "/api/add-name":
+            user = payload.get("user")
+            name = payload.get("name")
+            if user not in USERS or not name or not str(name).strip():
+                return self._send_error_json("invalid payload", 400)
+            db.add_custom_name(user, str(name))
             return self._send_json(db.get_state(user))
 
         return self._send_error_json("not found", 404)

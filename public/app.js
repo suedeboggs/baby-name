@@ -22,6 +22,7 @@
     cardAltSpellings: document.getElementById("card-alt-spellings"),
     stampLike: document.querySelector(".stamp-like"),
     stampNope: document.querySelector(".stamp-nope"),
+    stampMaybe: document.querySelector(".stamp-maybe"),
     btnLike: document.getElementById("btn-like"),
     btnDislike: document.getElementById("btn-dislike"),
     btnUndo: document.getElementById("btn-undo"),
@@ -29,13 +30,18 @@
     btnSeeResults: document.getElementById("btn-see-results"),
     btnSwitchUser: document.getElementById("btn-switch-user"),
     btnBackToSwipe: document.getElementById("btn-back-to-swipe"),
+    btnToggleAddName: document.getElementById("btn-toggle-add-name"),
+    addNameForm: document.getElementById("add-name-form"),
+    addNameInput: document.getElementById("add-name-input"),
   };
 
   let currentUser = localStorage.getItem("babyNamesUser") || null;
   let state = null; // last /api/state response
   let dragging = false;
   let dragStartX = 0;
+  let dragStartY = 0;
   let dragCurrentX = 0;
+  let dragCurrentY = 0;
   let pointerId = null;
 
   function showScreen(name) {
@@ -56,11 +62,11 @@
     return api(`/api/state?user=${encodeURIComponent(user)}`);
   }
 
-  function postVote(user, name, liked) {
+  function postVote(user, name, status) {
     return api("/api/vote", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ user, name, liked }),
+      body: JSON.stringify({ user, name, status }),
     });
   }
 
@@ -72,11 +78,20 @@
     });
   }
 
+  function postAddName(user, name) {
+    return api("/api/add-name", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ user, name }),
+    });
+  }
+
   function resetCardTransform() {
     els.card.style.transition = "none";
     els.card.style.transform = "translate(0, 0) rotate(0deg)";
     els.stampLike.style.opacity = 0;
     els.stampNope.style.opacity = 0;
+    els.stampMaybe.style.opacity = 0;
   }
 
   function renderState(s) {
@@ -117,19 +132,24 @@
     renderState(s);
   }
 
-  async function vote(liked) {
+  async function vote(status) {
     if (!state || !state.card) return;
     const name = state.card;
-    animateCardAway(liked, async () => {
-      const s = await postVote(currentUser, name, liked);
+    animateCardAway(status, async () => {
+      const s = await postVote(currentUser, name, status);
       renderState(s);
     });
   }
 
-  function animateCardAway(liked, onDone) {
-    const dir = liked ? 1 : -1;
+  function animateCardAway(status, onDone) {
     els.card.style.transition = "transform 0.35s ease";
-    els.card.style.transform = `translate(${dir * 600}px, -40px) rotate(${dir * 30}deg)`;
+    if (status === "liked") {
+      els.card.style.transform = "translate(600px, -40px) rotate(30deg)";
+    } else if (status === "disliked") {
+      els.card.style.transform = "translate(-600px, -40px) rotate(-30deg)";
+    } else {
+      els.card.style.transform = "translate(0, 600px) rotate(0deg)";
+    }
     setTimeout(onDone, 220);
   }
 
@@ -146,7 +166,9 @@
     pointerId = e.pointerId;
     els.card.setPointerCapture(pointerId);
     dragStartX = e.clientX;
+    dragStartY = e.clientY;
     dragCurrentX = e.clientX;
+    dragCurrentY = e.clientY;
     els.card.style.transition = "none";
     e.preventDefault();
   }
@@ -155,13 +177,22 @@
     if (!dragging) return;
     e.preventDefault();
     dragCurrentX = e.clientX;
+    dragCurrentY = e.clientY;
     const dx = dragCurrentX - dragStartX;
-    const rotate = dx / 12;
-    els.card.style.transform = `translate(${dx}px, 0) rotate(${rotate}deg)`;
-    const likeOpacity = Math.max(0, Math.min(1, dx / 100));
-    const nopeOpacity = Math.max(0, Math.min(1, -dx / 100));
-    els.stampLike.style.opacity = likeOpacity;
-    els.stampNope.style.opacity = nopeOpacity;
+    const dy = dragCurrentY - dragStartY;
+
+    if (Math.abs(dx) >= Math.abs(dy)) {
+      const rotate = dx / 12;
+      els.card.style.transform = `translate(${dx}px, 0) rotate(${rotate}deg)`;
+      els.stampLike.style.opacity = Math.max(0, Math.min(1, dx / 100));
+      els.stampNope.style.opacity = Math.max(0, Math.min(1, -dx / 100));
+      els.stampMaybe.style.opacity = 0;
+    } else {
+      els.card.style.transform = `translate(0, ${Math.max(0, dy)}px) rotate(0deg)`;
+      els.stampLike.style.opacity = 0;
+      els.stampNope.style.opacity = 0;
+      els.stampMaybe.style.opacity = Math.max(0, Math.min(1, dy / 100));
+    }
   }
 
   function onPointerUp(e) {
@@ -172,15 +203,24 @@
       pointerId = null;
     }
     const dx = dragCurrentX - dragStartX;
+    const dy = dragCurrentY - dragStartY;
     const THRESHOLD = 100;
-    if (dx > THRESHOLD) {
-      vote(true);
-    } else if (dx < -THRESHOLD) {
-      vote(false);
-    } else {
-      els.card.style.transition = "transform 0.25s ease";
-      resetCardTransform();
+
+    if (Math.abs(dx) >= Math.abs(dy)) {
+      if (dx > THRESHOLD) {
+        vote("liked");
+        return;
+      } else if (dx < -THRESHOLD) {
+        vote("disliked");
+        return;
+      }
+    } else if (dy > THRESHOLD) {
+      vote("maybe");
+      return;
     }
+
+    els.card.style.transition = "transform 0.25s ease";
+    resetCardTransform();
   }
 
   function onPointerCancel() {
@@ -198,13 +238,32 @@
 
   document.addEventListener("keydown", (e) => {
     if (screens.swipe.classList.contains("hidden")) return;
-    if (e.key === "ArrowRight") vote(true);
-    if (e.key === "ArrowLeft") vote(false);
+    if (e.key === "ArrowRight") vote("liked");
+    if (e.key === "ArrowLeft") vote("disliked");
+    if (e.key === "ArrowDown") vote("maybe");
   });
 
-  els.btnLike.addEventListener("click", () => vote(true));
-  els.btnDislike.addEventListener("click", () => vote(false));
+  els.btnLike.addEventListener("click", () => vote("liked"));
+  els.btnDislike.addEventListener("click", () => vote("disliked"));
   els.btnUndo.addEventListener("click", undo);
+
+  // ---- Add a name ----
+  els.btnToggleAddName.addEventListener("click", () => {
+    els.addNameForm.classList.toggle("hidden");
+    if (!els.addNameForm.classList.contains("hidden")) {
+      els.addNameInput.focus();
+    }
+  });
+
+  els.addNameForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const name = els.addNameInput.value.trim();
+    if (!name) return;
+    const s = await postAddName(currentUser, name);
+    els.addNameInput.value = "";
+    els.addNameForm.classList.add("hidden");
+    renderState(s);
+  });
 
   // ---- Login ----
   document.querySelectorAll(".user-btn").forEach((btn) => {
@@ -248,13 +307,21 @@
     renderResults(data);
   }
 
+  const STATUS_LABELS = { liked: "Liked", disliked: "Disliked", maybe: "Maybe" };
+
   function renderResults(data) {
     document.getElementById("count-matches").textContent = data.matches.length;
+    document.getElementById("count-maybe").textContent = data.maybe.length;
     document.getElementById("count-onesided").textContent = data.oneSided.length;
     document.getElementById("count-disliked").textContent = data.bothDisliked.length;
     document.getElementById("count-pending").textContent = data.pending.length;
 
     fillList("list-matches", "empty-matches", data.matches, (name) => `<li>${escapeHtml(name)}</li>`);
+
+    fillList("list-maybe", "empty-maybe", data.maybe, (item) => {
+      const badge = `Marie: ${STATUS_LABELS[item.marie]} · Jimmy: ${STATUS_LABELS[item.jimmy]}`;
+      return `<li>${escapeHtml(item.name)} <span class="badge">${escapeHtml(badge)}</span></li>`;
+    });
 
     fillList("list-onesided", "empty-onesided", data.oneSided, (item) => {
       const likerLabel = USER_LABELS[item.liker];

@@ -9,6 +9,7 @@ NAMES_PATH = os.path.join(BASE_DIR, "data", "names.json")
 NAME_DETAILS_PATH = os.path.join(BASE_DIR, "data", "name_details.json")
 
 USERS = ["marie", "jimmy"]
+STATUSES = ("liked", "disliked", "maybe")
 
 # Distinct fixed seeds so each person gets a different (but stable) shuffle
 # of the same 1700+ names -- this guarantees full coverage of the list
@@ -28,6 +29,20 @@ def get_name_details(name):
     }
 
 
+def _find_canonical_name(name):
+    lowered = name.lower()
+    for known in NAME_DETAILS:
+        if known.lower() == lowered:
+            return known
+    return None
+
+
+def _add_name_details(name):
+    NAME_DETAILS[name] = {"category": "Added by you", "pronunciation": "", "altSpellings": []}
+    with open(NAME_DETAILS_PATH, "w") as f:
+        json.dump(NAME_DETAILS, f, indent=2, ensure_ascii=False)
+
+
 def get_conn():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
@@ -41,7 +56,7 @@ def init_db():
         CREATE TABLE IF NOT EXISTS votes (
             user TEXT NOT NULL,
             name TEXT NOT NULL,
-            liked INTEGER NOT NULL,
+            status TEXT NOT NULL,
             voted_at TEXT NOT NULL,
             PRIMARY KEY (user, name)
         );
@@ -54,6 +69,16 @@ def init_db():
         """
     )
     conn.commit()
+
+    # Migrate older databases that still have the boolean "liked" column
+    # instead of the newer "status" column (liked/disliked/maybe).
+    columns = {row["name"] for row in conn.execute("PRAGMA table_info(votes)")}
+    if "liked" in columns and "status" not in columns:
+        conn.execute("ALTER TABLE votes ADD COLUMN status TEXT")
+        conn.execute(
+            "UPDATE votes SET status = CASE WHEN liked = 1 THEN 'liked' ELSE 'disliked' END WHERE status IS NULL"
+        )
+        conn.commit()
 
     with open(NAMES_PATH) as f:
         names = json.load(f)
@@ -92,7 +117,7 @@ def get_state(user):
         (user,),
     ).fetchone()
     last_vote = conn.execute(
-        "SELECT name, liked FROM votes WHERE user=? ORDER BY rowid DESC LIMIT 1",
+        "SELECT name, status FROM votes WHERE user=? ORDER BY rowid DESC LIMIT 1",
         (user,),
     ).fetchone()
     conn.close()
@@ -106,24 +131,26 @@ def get_state(user):
         "cardDetails": get_name_details(card_name) if card_name else None,
         "canUndo": last_vote is not None,
         "lastVote": (
-            {"name": last_vote["name"], "liked": bool(last_vote["liked"])}
+            {"name": last_vote["name"], "status": last_vote["status"]}
             if last_vote
             else None
         ),
     }
 
 
-def cast_vote(user, name, liked):
+def cast_vote(user, name, status):
+    if status not in STATUSES:
+        raise ValueError(f"invalid status: {status}")
     conn = get_conn()
     conn.execute(
         """
-        INSERT INTO votes (user, name, liked, voted_at)
+        INSERT INTO votes (user, name, status, voted_at)
         VALUES (?, ?, ?, datetime('now'))
         ON CONFLICT(user, name) DO UPDATE SET
-            liked = excluded.liked,
+            status = excluded.status,
             voted_at = excluded.voted_at
         """,
-        (user, name, 1 if liked else 0),
+        (user, name, status),
     )
     conn.commit()
     conn.close()
@@ -140,18 +167,55 @@ def undo_last(user):
     conn.close()
 
 
+def add_custom_name(user, raw_name):
+    name = raw_name.strip()
+    if not name:
+        raise ValueError("name is required")
+
+    canonical = _find_canonical_name(name)
+    is_new = canonical is None
+    if is_new:
+        canonical = name.title()
+        _add_name_details(canonical)
+
+    conn = get_conn()
+    for u in USERS:
+        exists = conn.execute(
+            "SELECT 1 FROM user_queue WHERE user=? AND name=?", (u, canonical)
+        ).fetchone()
+        if not exists:
+            # Must be lower than every position ever used for this user (not
+            # just unvoted ones), since positions are otherwise contiguous
+            # with no gaps -- min(unvoted) - 1 would collide with an
+            # already-used (voted) position.
+            min_position = conn.execute(
+                "SELECT MIN(position) p FROM user_queue WHERE user=?", (u,)
+            ).fetchone()["p"]
+            new_position = (min_position - 1) if min_position is not None else 0
+            conn.execute(
+                "INSERT INTO user_queue (user, position, name) VALUES (?, ?, ?)",
+                (u, new_position, canonical),
+            )
+    conn.commit()
+    conn.close()
+
+    cast_vote(user, canonical, "liked")
+    return canonical
+
+
 def get_results():
     conn = get_conn()
-    rows = conn.execute("SELECT user, name, liked FROM votes").fetchall()
+    rows = conn.execute("SELECT user, name, status FROM votes").fetchall()
     conn.close()
 
     by_name = {}
     for r in rows:
-        by_name.setdefault(r["name"], {})[r["user"]] = bool(r["liked"])
+        by_name.setdefault(r["name"], {})[r["user"]] = r["status"]
 
     matches = []
     one_sided = []
     both_disliked = []
+    maybe = []
     pending = []
 
     for name, votes in by_name.items():
@@ -159,21 +223,25 @@ def get_results():
         j = votes.get("jimmy")
         if m is None or j is None:
             pending.append({"name": name, "marie": m, "jimmy": j})
-        elif m and j:
+        elif m == "liked" and j == "liked":
             matches.append(name)
-        elif (not m) and (not j):
+        elif m == "disliked" and j == "disliked":
             both_disliked.append(name)
+        elif {m, j} == {"liked", "disliked"}:
+            one_sided.append({"name": name, "liker": "marie" if m == "liked" else "jimmy"})
         else:
-            one_sided.append({"name": name, "liker": "marie" if m else "jimmy"})
+            maybe.append({"name": name, "marie": m, "jimmy": j})
 
     matches.sort(key=str.lower)
     both_disliked.sort(key=str.lower)
     one_sided.sort(key=lambda x: x["name"].lower())
+    maybe.sort(key=lambda x: x["name"].lower())
     pending.sort(key=lambda x: x["name"].lower())
 
     return {
         "matches": matches,
         "oneSided": one_sided,
         "bothDisliked": both_disliked,
+        "maybe": maybe,
         "pending": pending,
     }

@@ -56,6 +56,7 @@
         <div id="card" class="name-card hidden">
           <div class="stamp stamp-like">LIKE</div>
           <div class="stamp stamp-nope">NOPE</div>
+          <div class="stamp stamp-maybe">MAYBE</div>
           <div id="card-category" class="card-category"></div>
           <div id="card-name" class="card-name"></div>
           <div id="card-pronunciation" class="card-pronunciation"></div>
@@ -68,7 +69,16 @@
         <button id="btn-undo" class="round-btn undo-btn" title="Undo last swipe">↺</button>
         <button id="btn-like" class="round-btn like-btn" title="Like">♥</button>
       </div>
-      <p class="hint">Drag the card, use ← → arrow keys, or tap the buttons</p>
+      <p class="hint">Drag the card, use ← → ↓ arrow keys, or tap the buttons — swipe down for maybe</p>
+
+      <div class="add-name-wrap">
+        <button id="btn-toggle-add-name" class="link-btn">+ Add a name</button>
+        <form id="add-name-form" class="add-name-form hidden">
+          <input id="add-name-input" type="text" placeholder="Type a name…" autocomplete="off" />
+          <button type="submit" class="primary-btn add-name-submit">Add &amp; like it</button>
+          <p class="add-name-hint">If it's already on the list, this just marks it as liked for you — no need to swipe past it again.</p>
+        </form>
+      </div>
     </section>
 
     <!-- RESULTS SCREEN -->
@@ -82,6 +92,7 @@
 
       <div class="tabs">
         <button class="tab-btn active" data-tab="matches">Matches <span id="count-matches" class="tab-count"></span></button>
+        <button class="tab-btn" data-tab="maybe">Maybe <span id="count-maybe" class="tab-count"></span></button>
         <button class="tab-btn" data-tab="onesided">Mismatched <span id="count-onesided" class="tab-count"></span></button>
         <button class="tab-btn" data-tab="disliked">Both Passed <span id="count-disliked" class="tab-count"></span></button>
         <button class="tab-btn" data-tab="pending">Still Deciding <span id="count-pending" class="tab-count"></span></button>
@@ -91,6 +102,10 @@
         <div id="panel-matches" class="tab-panel">
           <ul id="list-matches" class="name-list"></ul>
           <p id="empty-matches" class="list-empty hidden">No matches yet — keep swiping!</p>
+        </div>
+        <div id="panel-maybe" class="tab-panel hidden">
+          <ul id="list-maybe" class="name-list"></ul>
+          <p id="empty-maybe" class="list-empty hidden">Nothing on the maybe pile.</p>
         </div>
         <div id="panel-onesided" class="tab-panel hidden">
           <ul id="list-onesided" class="name-list"></ul>
