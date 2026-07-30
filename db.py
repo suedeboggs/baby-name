@@ -155,13 +155,13 @@ def cast_vote(user, name, status):
     if status not in STATUSES:
         raise ValueError(f"invalid status: {status}")
     conn = get_conn()
+    # INSERT OR REPLACE instead of INSERT ... ON CONFLICT DO UPDATE (SQLite
+    # upsert, added in 3.24.0) since older SQLite builds -- like the one
+    # bundled with some hosts' system Python -- don't support that syntax.
     conn.execute(
         """
-        INSERT INTO votes (user, name, status, voted_at)
+        INSERT OR REPLACE INTO votes (user, name, status, voted_at)
         VALUES (?, ?, ?, datetime('now'))
-        ON CONFLICT(user, name) DO UPDATE SET
-            status = excluded.status,
-            voted_at = excluded.voted_at
         """,
         (user, name, status),
     )
