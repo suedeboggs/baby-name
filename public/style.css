@@ -138,6 +138,11 @@ html, body {
 
 .whoami { font-weight: 600; font-size: 16px; }
 
+.round-badge-wrap {
+  position: relative;
+  display: inline-block;
+}
+
 .round-badge {
   display: inline-block;
   font-size: 11px;
@@ -149,9 +154,45 @@ html, body {
   padding: 3px 9px;
   border-radius: 999px;
   vertical-align: middle;
+  border: none;
+  cursor: pointer;
 }
 
+button.round-badge:hover { background: rgba(91,107,255,0.2); }
+
 .round-badge.hidden { display: none; }
+
+.round-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 160px;
+  z-index: 10;
+}
+
+.round-menu.hidden { display: none; }
+
+.round-menu-item {
+  border: none;
+  background: none;
+  text-align: left;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.round-menu-item:hover { background: rgba(91,107,255,0.1); }
 
 .topbar-actions { display: flex; gap: 14px; }
 

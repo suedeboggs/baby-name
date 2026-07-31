@@ -12,13 +12,18 @@ USERS = set(db.USERS)
 
 
 def _parse_round(source):
+    round = _parse_optional_round(source)
+    return round if round is not None else 1
+
+
+def _parse_optional_round(source):
     raw = source.get("round")
     if isinstance(raw, list):
         raw = raw[0] if raw else None
     try:
         return int(raw)
     except (TypeError, ValueError):
-        return 1
+        return None
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -65,7 +70,8 @@ class Handler(BaseHTTPRequestHandler):
             return self._send_json(db.get_state(user, round=round))
 
         if parsed.path == "/api/results":
-            return self._send_json(db.get_display_results())
+            round = _parse_optional_round(qs)
+            return self._send_json(db.get_display_results(round=round))
 
         if parsed.path == "/api/round-status":
             return self._send_json(db.get_round_status())
@@ -107,8 +113,8 @@ class Handler(BaseHTTPRequestHandler):
             db.add_custom_name(user, str(name))
             return self._send_json(db.get_state(user))
 
-        if parsed.path == "/api/start-round-2":
-            return self._send_json(db.start_round_2())
+        if parsed.path == "/api/start-next-round":
+            return self._send_json(db.start_next_round())
 
         return self._send_error_json("not found", 404)
 

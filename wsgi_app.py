@@ -13,13 +13,18 @@ db.init_db()
 
 
 def _parse_round(source):
+    round = _parse_optional_round(source)
+    return round if round is not None else 1
+
+
+def _parse_optional_round(source):
     raw = source.get("round")
     if isinstance(raw, list):
         raw = raw[0] if raw else None
     try:
         return int(raw)
     except (TypeError, ValueError):
-        return 1
+        return None
 
 
 def _json_response(start_response, obj, status="200 OK"):
@@ -66,12 +71,13 @@ def application(environ, start_response):
         return _json_response(start_response, db.get_state(user, round=round))
 
     if method == "GET" and path == "/api/results":
-        return _json_response(start_response, db.get_display_results())
+        round = _parse_optional_round(parse_qs(query))
+        return _json_response(start_response, db.get_display_results(round=round))
 
     if method == "GET" and path == "/api/round-status":
         return _json_response(start_response, db.get_round_status())
 
-    if method == "POST" and path in ("/api/vote", "/api/undo", "/api/add-name", "/api/start-round-2"):
+    if method == "POST" and path in ("/api/vote", "/api/undo", "/api/add-name", "/api/start-next-round"):
         try:
             length = int(environ.get("CONTENT_LENGTH", 0) or 0)
         except ValueError:
@@ -108,8 +114,8 @@ def application(environ, start_response):
             db.add_custom_name(user, str(name))
             return _json_response(start_response, db.get_state(user))
 
-        if path == "/api/start-round-2":
-            return _json_response(start_response, db.start_round_2())
+        if path == "/api/start-next-round":
+            return _json_response(start_response, db.start_next_round())
 
     if method == "GET":
         return _static_response(start_response, path)

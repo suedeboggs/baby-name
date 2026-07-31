@@ -35,7 +35,13 @@
     <!-- SWIPE SCREEN -->
     <section id="screen-swipe" class="screen hidden">
       <header class="topbar">
-        <div class="whoami">Hi, <span id="current-user-label"></span> <span id="round-badge" class="round-badge hidden"></span></div>
+        <div class="whoami">
+          Hi, <span id="current-user-label"></span>
+          <span class="round-badge-wrap">
+            <button id="round-badge" class="round-badge hidden"></button>
+            <div id="round-menu" class="round-menu hidden"></div>
+          </span>
+        </div>
         <div class="topbar-actions">
           <button id="btn-results" class="link-btn">Results</button>
           <button id="btn-switch-user" class="link-btn">Switch</button>
@@ -86,6 +92,7 @@
       <header class="topbar">
         <div class="whoami">Results <span id="results-round-label" class="round-badge"></span></div>
         <div class="topbar-actions">
+          <button id="btn-current-results" class="link-btn hidden">See current results</button>
           <button id="btn-back-to-swipe" class="link-btn">Back to swiping</button>
         </div>
       </header>

@@ -13,6 +13,7 @@
     welcomeUserLabel: document.getElementById("welcome-user-label"),
     btnStartSwiping: document.getElementById("btn-start-swiping"),
     roundBadge: document.getElementById("round-badge"),
+    roundMenu: document.getElementById("round-menu"),
     progressFill: document.getElementById("progress-fill"),
     progressLabel: document.getElementById("progress-label"),
     cardEmpty: document.getElementById("card-empty"),
@@ -33,6 +34,7 @@
     btnResults: document.getElementById("btn-results"),
     btnSwitchUser: document.getElementById("btn-switch-user"),
     btnBackToSwipe: document.getElementById("btn-back-to-swipe"),
+    btnCurrentResults: document.getElementById("btn-current-results"),
     btnToggleAddName: document.getElementById("btn-toggle-add-name"),
     addNameForm: document.getElementById("add-name-form"),
     addNameInput: document.getElementById("add-name-input"),
@@ -95,8 +97,8 @@
     return api("/api/round-status");
   }
 
-  function postStartRound2() {
-    return api("/api/start-round-2", {
+  function postStartNextRound() {
+    return api("/api/start-next-round", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: "{}",
@@ -167,44 +169,59 @@
   }
 
   async function handleQueueExhausted() {
-    if (currentRound === 1) {
-      let roundStatus;
-      try {
-        roundStatus = await fetchRoundStatus();
-      } catch (err) {
-        console.error("Couldn't check round status:", err);
-        showEmptyState("🎉", "You've been through the whole list!", "See results", showResults);
-        return;
-      }
-      if (roundStatus.round2Exists) {
-        currentRound = 2;
-        await loadState();
-        return;
-      }
-      if (roundStatus.round1Complete) {
-        showEmptyState(
-          "🎉",
-          `You've both finished round 1! Ready to narrow down your ${roundStatus.round2EligibleCount} matches, maybes, and mismatches?`,
-          "Start Round 2",
-          startRound2
-        );
-      } else {
-        showEmptyState("⏳", "You're all caught up! Waiting for your partner to finish round 1.", "See results so far", showResults);
-      }
+    let roundStatus;
+    try {
+      roundStatus = await fetchRoundStatus();
+    } catch (err) {
+      console.error("Couldn't check round status:", err);
+      showEmptyState("🎉", "You've been through the whole list!", "See results", () => showResults());
+      return;
+    }
+
+    if (currentRound < roundStatus.currentRound) {
+      // A later round already exists (partner, or an earlier session, moved
+      // things forward) -- just jump ahead to it.
+      currentRound = roundStatus.currentRound;
+      await loadState();
+      return;
+    }
+
+    if (!roundStatus.currentRoundComplete) {
+      showEmptyState(
+        "⏳",
+        `You're all caught up! Waiting for your partner to finish round ${roundStatus.currentRound}.`,
+        "See results so far",
+        () => showResults()
+      );
+      return;
+    }
+
+    if (roundStatus.nextRoundEligibleCount > 0) {
+      showEmptyState(
+        "🎉",
+        `You've both finished round ${roundStatus.currentRound}! Ready to narrow down your ${roundStatus.nextRoundEligibleCount} matches, maybes, and mismatches?`,
+        `Start Round ${roundStatus.currentRound + 1}`,
+        startNextRound
+      );
     } else {
-      showEmptyState("🏆", "You've finished round 2! Check out your results.", "See results", showResults);
+      showEmptyState(
+        "🏆",
+        `You've both finished round ${roundStatus.currentRound}! Check out your results.`,
+        "See results",
+        () => showResults()
+      );
     }
   }
 
-  async function startRound2() {
+  async function startNextRound() {
     els.btnEmptyAction.disabled = true;
     try {
-      await postStartRound2();
-      currentRound = 2;
+      const result = await postStartNextRound();
+      currentRound = result.round;
       await loadState();
     } catch (err) {
-      console.error("Starting round 2 failed:", err);
-      alert("Couldn't start round 2 — try again.");
+      console.error("Starting the next round failed:", err);
+      alert("Couldn't start the next round — try again.");
     } finally {
       els.btnEmptyAction.disabled = false;
     }
@@ -388,17 +405,55 @@
     showScreen("login");
   });
 
+  // ---- Round history menu ----
+  els.roundBadge.addEventListener("click", async (e) => {
+    e.stopPropagation();
+    if (!els.roundMenu.classList.contains("hidden")) {
+      els.roundMenu.classList.add("hidden");
+      return;
+    }
+    let roundStatus;
+    try {
+      roundStatus = await fetchRoundStatus();
+    } catch (err) {
+      console.error("Couldn't load round history:", err);
+      return;
+    }
+    els.roundMenu.innerHTML = roundStatus.availableRounds
+      .map((r) => {
+        const label = r === roundStatus.currentRound ? `Round ${r} (current)` : `Round ${r} results`;
+        return `<button class="round-menu-item" data-round="${r}">${label}</button>`;
+      })
+      .join("");
+    els.roundMenu.querySelectorAll(".round-menu-item").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const r = parseInt(btn.dataset.round, 10);
+        els.roundMenu.classList.add("hidden");
+        showResults(r === roundStatus.currentRound ? undefined : r);
+      });
+    });
+    els.roundMenu.classList.remove("hidden");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!els.roundMenu.contains(e.target) && e.target !== els.roundBadge) {
+      els.roundMenu.classList.add("hidden");
+    }
+  });
+
   // ---- Results ----
-  els.btnResults.addEventListener("click", showResults);
+  els.btnResults.addEventListener("click", () => showResults());
+  els.btnCurrentResults.addEventListener("click", () => showResults());
   els.btnBackToSwipe.addEventListener("click", async () => {
     showScreen("swipe");
     await loadState();
   });
 
-  async function showResults() {
+  async function showResults(round) {
     showScreen("results");
-    const data = await api("/api/results");
-    renderResults(data);
+    const query = round ? `?round=${round}` : "";
+    const data = await api(`/api/results${query}`);
+    renderResults(data, round != null);
   }
 
   const MAYBE_LEVEL_LABELS = {
@@ -408,8 +463,9 @@
   };
   const MAYBE_LEVEL_ORDER = ["both-maybe", "maybe-yes", "maybe-no"];
 
-  function renderResults(data) {
-    els.resultsRoundLabel.textContent = data.round === 2 ? "Round 2" : "Round 1";
+  function renderResults(data, isHistorical) {
+    els.resultsRoundLabel.textContent = isHistorical ? `Round ${data.round} (past)` : `Round ${data.round}`;
+    els.btnCurrentResults.classList.toggle("hidden", !isHistorical);
 
     document.getElementById("count-matches").textContent = data.matches.length;
     document.getElementById("count-maybe").textContent = data.maybe.length;

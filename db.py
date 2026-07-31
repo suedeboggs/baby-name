@@ -341,69 +341,89 @@ def get_results(round=1):
     }
 
 
-def _round_queue_exists(round):
+def get_current_round():
+    """The highest round that has a queue -- rounds are always created for
+    both users at once, so this is a single global value, not per-user."""
     conn = get_conn()
-    exists = conn.execute(
-        "SELECT EXISTS(SELECT 1 FROM user_queue WHERE round=?) e", (round,)
-    ).fetchone()["e"]
+    row = conn.execute("SELECT MAX(round) r FROM user_queue").fetchone()
     conn.close()
-    return bool(exists)
+    return row["r"] or 1
 
 
-def get_display_results():
-    """Round 1 breakdown, except once round 2 exists its matches/maybe/
-    mismatched supersede round 1's (refined by the second pass) while
-    "both passed" always stays the permanent round-1 list."""
-    round1 = get_results(round=1)
-    if _round_queue_exists(2):
-        round2 = get_results(round=2)
-        return {
-            "round": 2,
-            "matches": round2["matches"],
-            "oneSided": round2["oneSided"],
-            "maybe": round2["maybe"],
-            "pending": round2["pending"],
-            "bothDisliked": round1["bothDisliked"],
-        }
-    return round1
+def get_available_rounds():
+    conn = get_conn()
+    rows = conn.execute("SELECT DISTINCT round FROM user_queue ORDER BY round").fetchall()
+    conn.close()
+    return [r["round"] for r in rows]
 
 
-def get_round_status():
-    # Every name in the round-1 queue must actually be voted on by both users --
-    # checking for an empty "pending" list isn't enough on its own, since a name
-    # neither user has touched yet never shows up in that list at all.
-    round1_complete = all(
-        get_state(user, round=1)["remaining"] == 0 for user in USERS
-    )
-    round1 = get_results(round=1)
-    eligible_count = len(round1["matches"]) + len(round1["maybe"]) + len(round1["oneSided"])
+def get_display_results(round=None):
+    """With no round given: the current round's matches/maybe/mismatched
+    (refined by however many rounds have run), plus "both passed" -- which
+    accumulates every round's passes, since once passed it's passed for
+    good. With a round given: that round's own historical snapshot as it
+    was at the time, unmodified."""
+    if round is not None:
+        return get_results(round=round)
+
+    current = get_current_round()
+    current_results = get_results(round=current)
+    both_disliked = set()
+    for r in range(1, current + 1):
+        both_disliked.update(get_results(round=r)["bothDisliked"])
+
     return {
-        "round1Complete": round1_complete,
-        "round2Exists": _round_queue_exists(2),
-        "round2EligibleCount": eligible_count,
+        "round": current,
+        "matches": current_results["matches"],
+        "oneSided": current_results["oneSided"],
+        "maybe": current_results["maybe"],
+        "pending": current_results["pending"],
+        "bothDisliked": sorted(both_disliked, key=str.lower),
     }
 
 
-def start_round_2():
-    round1 = get_results(round=1)
-    eligible = set(round1["matches"])
-    eligible.update(x["name"] for x in round1["maybe"])
-    eligible.update(x["name"] for x in round1["oneSided"])
+def get_round_status():
+    current = get_current_round()
+    # Every name in the current round's queue must actually be voted on by
+    # both users -- checking for an empty "pending" list isn't enough on its
+    # own, since a name neither user has touched yet never shows up there.
+    current_complete = all(
+        get_state(user, round=current)["remaining"] == 0 for user in USERS
+    )
+    eligible_count = 0
+    if current_complete:
+        results = get_results(round=current)
+        eligible_count = len(results["matches"]) + len(results["maybe"]) + len(results["oneSided"])
+    return {
+        "currentRound": current,
+        "currentRoundComplete": current_complete,
+        "nextRoundEligibleCount": eligible_count,
+        "availableRounds": get_available_rounds(),
+    }
+
+
+def start_next_round():
+    current = get_current_round()
+    results = get_results(round=current)
+    eligible = set(results["matches"])
+    eligible.update(x["name"] for x in results["maybe"])
+    eligible.update(x["name"] for x in results["oneSided"])
     eligible = sorted(eligible, key=str.lower)
+    next_round = current + 1
 
     conn = get_conn()
     for user in USERS:
         existing = conn.execute(
-            "SELECT COUNT(*) c FROM user_queue WHERE user=? AND round=2", (user,)
+            "SELECT COUNT(*) c FROM user_queue WHERE user=? AND round=?", (user, next_round)
         ).fetchone()["c"]
         if existing == 0:
             shuffled = eligible[:]
-            # Different seed offset so round 2's order isn't identical to round 1's.
-            random.Random(SEEDS[user] + 1).shuffle(shuffled)
+            # Different seed offset per round so each round's order differs.
+            random.Random(SEEDS[user] + next_round).shuffle(shuffled)
             conn.executemany(
-                "INSERT INTO user_queue (user, round, position, name) VALUES (?, 2, ?, ?)",
-                [(user, i, n) for i, n in enumerate(shuffled)],
+                "INSERT INTO user_queue (user, round, position, name) VALUES (?, ?, ?, ?)",
+                [(user, next_round, i, n) for i, n in enumerate(shuffled)],
             )
     conn.commit()
     conn.close()
-    return {"eligibleCount": len(eligible)}
+    return {"round": next_round, "eligibleCount": len(eligible)}
