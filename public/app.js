@@ -12,9 +12,13 @@
     currentUserLabel: document.getElementById("current-user-label"),
     welcomeUserLabel: document.getElementById("welcome-user-label"),
     btnStartSwiping: document.getElementById("btn-start-swiping"),
+    roundBadge: document.getElementById("round-badge"),
     progressFill: document.getElementById("progress-fill"),
     progressLabel: document.getElementById("progress-label"),
     cardEmpty: document.getElementById("card-empty"),
+    emptyEmoji: document.getElementById("empty-emoji"),
+    emptyMessage: document.getElementById("empty-message"),
+    btnEmptyAction: document.getElementById("btn-empty-action"),
     card: document.getElementById("card"),
     cardCategory: document.getElementById("card-category"),
     cardName: document.getElementById("card-name"),
@@ -27,15 +31,16 @@
     btnDislike: document.getElementById("btn-dislike"),
     btnUndo: document.getElementById("btn-undo"),
     btnResults: document.getElementById("btn-results"),
-    btnSeeResults: document.getElementById("btn-see-results"),
     btnSwitchUser: document.getElementById("btn-switch-user"),
     btnBackToSwipe: document.getElementById("btn-back-to-swipe"),
     btnToggleAddName: document.getElementById("btn-toggle-add-name"),
     addNameForm: document.getElementById("add-name-form"),
     addNameInput: document.getElementById("add-name-input"),
+    resultsRoundLabel: document.getElementById("results-round-label"),
   };
 
   let currentUser = localStorage.getItem("babyNamesUser") || null;
+  let currentRound = 1;
   let state = null; // last /api/state response
   let dragging = false;
   let dragStartX = 0;
@@ -58,23 +63,23 @@
     return res.json();
   }
 
-  function fetchState(user) {
-    return api(`/api/state?user=${encodeURIComponent(user)}`);
+  function fetchState(user, round) {
+    return api(`/api/state?user=${encodeURIComponent(user)}&round=${round}`);
   }
 
-  function postVote(user, name, status) {
+  function postVote(user, name, status, round) {
     return api("/api/vote", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ user, name, status }),
+      body: JSON.stringify({ user, name, status, round }),
     });
   }
 
-  function postUndo(user) {
+  function postUndo(user, round) {
     return api("/api/undo", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ user }),
+      body: JSON.stringify({ user, round }),
     });
   }
 
@@ -83,6 +88,18 @@
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ user, name }),
+    });
+  }
+
+  function fetchRoundStatus() {
+    return api("/api/round-status");
+  }
+
+  function postStartRound2() {
+    return api("/api/start-round-2", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: "{}",
     });
   }
 
@@ -96,6 +113,9 @@
 
   function renderState(s) {
     state = s;
+    currentRound = s.round;
+    els.roundBadge.classList.toggle("hidden", s.round <= 1);
+    els.roundBadge.textContent = `Round ${s.round}`;
     els.progressFill.style.width = s.total
       ? `${(s.votedCount / s.total) * 100}%`
       : "0%";
@@ -106,6 +126,7 @@
     if (!s.card) {
       els.card.classList.add("hidden");
       els.cardEmpty.classList.remove("hidden");
+      handleQueueExhausted();
     } else {
       els.cardEmpty.classList.add("hidden");
       els.card.classList.remove("hidden");
@@ -128,8 +149,65 @@
   }
 
   async function loadState() {
-    const s = await fetchState(currentUser);
+    const s = await fetchState(currentUser, currentRound);
     renderState(s);
+  }
+
+  function showEmptyState(emoji, message, actionLabel, actionHandler) {
+    els.emptyEmoji.textContent = emoji;
+    els.emptyMessage.textContent = message;
+    if (actionLabel) {
+      els.btnEmptyAction.textContent = actionLabel;
+      els.btnEmptyAction.classList.remove("hidden");
+      els.btnEmptyAction.onclick = actionHandler;
+    } else {
+      els.btnEmptyAction.classList.add("hidden");
+      els.btnEmptyAction.onclick = null;
+    }
+  }
+
+  async function handleQueueExhausted() {
+    if (currentRound === 1) {
+      let roundStatus;
+      try {
+        roundStatus = await fetchRoundStatus();
+      } catch (err) {
+        console.error("Couldn't check round status:", err);
+        showEmptyState("🎉", "You've been through the whole list!", "See results", showResults);
+        return;
+      }
+      if (roundStatus.round2Exists) {
+        currentRound = 2;
+        await loadState();
+        return;
+      }
+      if (roundStatus.round1Complete) {
+        showEmptyState(
+          "🎉",
+          `You've both finished round 1! Ready to narrow down your ${roundStatus.round2EligibleCount} matches, maybes, and mismatches?`,
+          "Start Round 2",
+          startRound2
+        );
+      } else {
+        showEmptyState("⏳", "You're all caught up! Waiting for your partner to finish round 1.", "See results so far", showResults);
+      }
+    } else {
+      showEmptyState("🏆", "You've finished round 2! Check out your results.", "See results", showResults);
+    }
+  }
+
+  async function startRound2() {
+    els.btnEmptyAction.disabled = true;
+    try {
+      await postStartRound2();
+      currentRound = 2;
+      await loadState();
+    } catch (err) {
+      console.error("Starting round 2 failed:", err);
+      alert("Couldn't start round 2 — try again.");
+    } finally {
+      els.btnEmptyAction.disabled = false;
+    }
   }
 
   async function vote(status) {
@@ -137,7 +215,7 @@
     const name = state.card;
     animateCardAway(status, async () => {
       try {
-        const s = await postVote(currentUser, name, status);
+        const s = await postVote(currentUser, name, status, currentRound);
         renderState(s);
       } catch (err) {
         console.error("Vote failed, resyncing:", err);
@@ -162,7 +240,7 @@
   async function undo() {
     if (!state || !state.canUndo) return;
     try {
-      const s = await postUndo(currentUser);
+      const s = await postUndo(currentUser, currentRound);
       renderState(s);
     } catch (err) {
       console.error("Undo failed:", err);
@@ -299,6 +377,7 @@
 
   async function enterSwipeScreen() {
     els.currentUserLabel.textContent = USER_LABELS[currentUser] || currentUser;
+    currentRound = 1;
     showScreen("swipe");
     await loadState();
   }
@@ -311,7 +390,6 @@
 
   // ---- Results ----
   els.btnResults.addEventListener("click", showResults);
-  els.btnSeeResults.addEventListener("click", showResults);
   els.btnBackToSwipe.addEventListener("click", async () => {
     showScreen("swipe");
     await loadState();
@@ -323,9 +401,16 @@
     renderResults(data);
   }
 
-  const STATUS_LABELS = { liked: "Liked", disliked: "Disliked", maybe: "Maybe" };
+  const MAYBE_LEVEL_LABELS = {
+    "both-maybe": "Both Maybe",
+    "maybe-yes": "One Maybe, One Yes",
+    "maybe-no": "One Maybe, One No",
+  };
+  const MAYBE_LEVEL_ORDER = ["both-maybe", "maybe-yes", "maybe-no"];
 
   function renderResults(data) {
+    els.resultsRoundLabel.textContent = data.round === 2 ? "Round 2" : "Round 1";
+
     document.getElementById("count-matches").textContent = data.matches.length;
     document.getElementById("count-maybe").textContent = data.maybe.length;
     document.getElementById("count-onesided").textContent = data.oneSided.length;
@@ -334,10 +419,7 @@
 
     fillList("list-matches", "empty-matches", data.matches, (name) => `<li>${escapeHtml(name)}</li>`);
 
-    fillList("list-maybe", "empty-maybe", data.maybe, (item) => {
-      const badge = `Marie: ${STATUS_LABELS[item.marie]} · Jimmy: ${STATUS_LABELS[item.jimmy]}`;
-      return `<li>${escapeHtml(item.name)} <span class="badge">${escapeHtml(badge)}</span></li>`;
-    });
+    renderMaybeGroups(data.maybe);
 
     fillList("list-onesided", "empty-onesided", data.oneSided, (item) => {
       const likerLabel = USER_LABELS[item.liker];
@@ -352,6 +434,34 @@
       if (item.jimmy === null || item.jimmy === undefined) waitingOn.push("Jimmy");
       return `<li>${escapeHtml(item.name)} <span class="badge">waiting on ${waitingOn.join(" & ")}</span></li>`;
     });
+  }
+
+  function renderMaybeGroups(items) {
+    const container = document.getElementById("list-maybe");
+    const emptyEl = document.getElementById("empty-maybe");
+    if (!items.length) {
+      container.innerHTML = "";
+      emptyEl.classList.remove("hidden");
+      return;
+    }
+    emptyEl.classList.add("hidden");
+
+    const byLevel = {};
+    items.forEach((item) => {
+      (byLevel[item.level] = byLevel[item.level] || []).push(item);
+    });
+
+    container.innerHTML = MAYBE_LEVEL_ORDER.filter((level) => byLevel[level] && byLevel[level].length)
+      .map((level) => {
+        const rows = byLevel[level].map((item) => `<li>${escapeHtml(item.name)}</li>`).join("");
+        return `
+          <div>
+            <p class="maybe-group-title">${MAYBE_LEVEL_LABELS[level]} (${byLevel[level].length})</p>
+            <ul class="name-list">${rows}</ul>
+          </div>
+        `;
+      })
+      .join("");
   }
 
   function fillList(listId, emptyId, items, renderItem) {

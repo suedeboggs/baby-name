@@ -35,7 +35,7 @@
     <!-- SWIPE SCREEN -->
     <section id="screen-swipe" class="screen hidden">
       <header class="topbar">
-        <div class="whoami">Hi, <span id="current-user-label"></span></div>
+        <div class="whoami">Hi, <span id="current-user-label"></span> <span id="round-badge" class="round-badge hidden"></span></div>
         <div class="topbar-actions">
           <button id="btn-results" class="link-btn">Results</button>
           <button id="btn-switch-user" class="link-btn">Switch</button>
@@ -49,9 +49,9 @@
 
       <div class="card-stage">
         <div id="card-empty" class="empty-state hidden">
-          <div class="empty-emoji">🎉</div>
-          <p>You've been through the whole list!</p>
-          <button id="btn-see-results" class="primary-btn">See results</button>
+          <div id="empty-emoji" class="empty-emoji">🎉</div>
+          <p id="empty-message"></p>
+          <button id="btn-empty-action" class="primary-btn hidden"></button>
         </div>
         <div id="card" class="name-card hidden">
           <div class="stamp stamp-like">LIKE</div>
@@ -84,7 +84,7 @@
     <!-- RESULTS SCREEN -->
     <section id="screen-results" class="screen hidden">
       <header class="topbar">
-        <div class="whoami">Results</div>
+        <div class="whoami">Results <span id="results-round-label" class="round-badge"></span></div>
         <div class="topbar-actions">
           <button id="btn-back-to-swipe" class="link-btn">Back to swiping</button>
         </div>
@@ -104,7 +104,7 @@
           <p id="empty-matches" class="list-empty hidden">No matches yet — keep swiping!</p>
         </div>
         <div id="panel-maybe" class="tab-panel hidden">
-          <ul id="list-maybe" class="name-list"></ul>
+          <div id="list-maybe" class="maybe-groups"></div>
           <p id="empty-maybe" class="list-empty hidden">Nothing on the maybe pile.</p>
         </div>
         <div id="panel-onesided" class="tab-panel hidden">

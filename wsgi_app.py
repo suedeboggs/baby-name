@@ -12,6 +12,16 @@ USERS = set(db.USERS)
 db.init_db()
 
 
+def _parse_round(source):
+    raw = source.get("round")
+    if isinstance(raw, list):
+        raw = raw[0] if raw else None
+    try:
+        return int(raw)
+    except (TypeError, ValueError):
+        return 1
+
+
 def _json_response(start_response, obj, status="200 OK"):
     body = json.dumps(obj).encode("utf-8")
     start_response(
@@ -48,15 +58,20 @@ def application(environ, start_response):
     query = environ.get("QUERY_STRING", "")
 
     if method == "GET" and path == "/api/state":
-        user = (parse_qs(query).get("user") or [""])[0]
+        qs = parse_qs(query)
+        user = (qs.get("user") or [""])[0]
         if user not in USERS:
             return _json_response(start_response, {"error": "invalid user"}, "400 Bad Request")
-        return _json_response(start_response, db.get_state(user))
+        round = _parse_round(qs)
+        return _json_response(start_response, db.get_state(user, round=round))
 
     if method == "GET" and path == "/api/results":
-        return _json_response(start_response, db.get_results())
+        return _json_response(start_response, db.get_display_results())
 
-    if method == "POST" and path in ("/api/vote", "/api/undo", "/api/add-name"):
+    if method == "GET" and path == "/api/round-status":
+        return _json_response(start_response, db.get_round_status())
+
+    if method == "POST" and path in ("/api/vote", "/api/undo", "/api/add-name", "/api/start-round-2"):
         try:
             length = int(environ.get("CONTENT_LENGTH", 0) or 0)
         except ValueError:
@@ -71,17 +86,19 @@ def application(environ, start_response):
             user = payload.get("user")
             name = payload.get("name")
             status = payload.get("status")
+            round = _parse_round(payload)
             if user not in USERS or not name or status not in db.STATUSES:
                 return _json_response(start_response, {"error": "invalid payload"}, "400 Bad Request")
-            db.cast_vote(user, name, status)
-            return _json_response(start_response, db.get_state(user))
+            db.cast_vote(user, name, status, round=round)
+            return _json_response(start_response, db.get_state(user, round=round))
 
         if path == "/api/undo":
             user = payload.get("user")
+            round = _parse_round(payload)
             if user not in USERS:
                 return _json_response(start_response, {"error": "invalid user"}, "400 Bad Request")
-            db.undo_last(user)
-            return _json_response(start_response, db.get_state(user))
+            db.undo_last(user, round=round)
+            return _json_response(start_response, db.get_state(user, round=round))
 
         if path == "/api/add-name":
             user = payload.get("user")
@@ -90,6 +107,9 @@ def application(environ, start_response):
                 return _json_response(start_response, {"error": "invalid payload"}, "400 Bad Request")
             db.add_custom_name(user, str(name))
             return _json_response(start_response, db.get_state(user))
+
+        if path == "/api/start-round-2":
+            return _json_response(start_response, db.start_round_2())
 
     if method == "GET":
         return _static_response(start_response, path)

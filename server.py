@@ -11,6 +11,16 @@ PUBLIC_DIR = os.path.join(BASE_DIR, "public")
 USERS = set(db.USERS)
 
 
+def _parse_round(source):
+    raw = source.get("round")
+    if isinstance(raw, list):
+        raw = raw[0] if raw else None
+    try:
+        return int(raw)
+    except (TypeError, ValueError):
+        return 1
+
+
 class Handler(BaseHTTPRequestHandler):
     def _send_json(self, obj, status=200):
         body = json.dumps(obj).encode("utf-8")
@@ -51,10 +61,14 @@ class Handler(BaseHTTPRequestHandler):
             user = (qs.get("user") or [""])[0]
             if user not in USERS:
                 return self._send_error_json("invalid user", 400)
-            return self._send_json(db.get_state(user))
+            round = _parse_round(qs)
+            return self._send_json(db.get_state(user, round=round))
 
         if parsed.path == "/api/results":
-            return self._send_json(db.get_results())
+            return self._send_json(db.get_display_results())
+
+        if parsed.path == "/api/round-status":
+            return self._send_json(db.get_round_status())
 
         return self._serve_static(parsed.path)
 
@@ -71,17 +85,19 @@ class Handler(BaseHTTPRequestHandler):
             user = payload.get("user")
             name = payload.get("name")
             status = payload.get("status")
+            round = _parse_round(payload)
             if user not in USERS or not name or status not in db.STATUSES:
                 return self._send_error_json("invalid payload", 400)
-            db.cast_vote(user, name, status)
-            return self._send_json(db.get_state(user))
+            db.cast_vote(user, name, status, round=round)
+            return self._send_json(db.get_state(user, round=round))
 
         if parsed.path == "/api/undo":
             user = payload.get("user")
+            round = _parse_round(payload)
             if user not in USERS:
                 return self._send_error_json("invalid user", 400)
-            db.undo_last(user)
-            return self._send_json(db.get_state(user))
+            db.undo_last(user, round=round)
+            return self._send_json(db.get_state(user, round=round))
 
         if parsed.path == "/api/add-name":
             user = payload.get("user")
@@ -90,6 +106,9 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send_error_json("invalid payload", 400)
             db.add_custom_name(user, str(name))
             return self._send_json(db.get_state(user))
+
+        if parsed.path == "/api/start-round-2":
+            return self._send_json(db.start_round_2())
 
         return self._send_error_json("not found", 404)
 
