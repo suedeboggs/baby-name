@@ -199,7 +199,7 @@
     if (roundStatus.nextRoundEligibleCount > 0) {
       showEmptyState(
         "🎉",
-        `You've both finished round ${roundStatus.currentRound}! Ready to narrow down your ${roundStatus.nextRoundEligibleCount} matches, maybes, and mismatches?`,
+        `You've both finished round ${roundStatus.currentRound}! Ready to narrow down your ${roundStatus.nextRoundEligibleCount} matches and maybes?`,
         `Start Round ${roundStatus.currentRound + 1}`,
         startNextRound
       );

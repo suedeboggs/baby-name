@@ -357,12 +357,36 @@ def get_available_rounds():
     return [r["round"] for r in rows]
 
 
+def _round_queue_names(round):
+    conn = get_conn()
+    rows = conn.execute(
+        "SELECT DISTINCT name FROM user_queue WHERE round=?", (round,)
+    ).fetchall()
+    conn.close()
+    return {r["name"] for r in rows}
+
+
+def _next_round_eligible_names(round):
+    """Names that carry forward from this round: matches, plus the two more
+    promising maybe levels (both-maybe / maybe-yes). Mismatched names and
+    "one maybe, one no" don't advance."""
+    results = get_results(round=round)
+    eligible = set(results["matches"])
+    eligible.update(
+        x["name"] for x in results["maybe"] if x["level"] in ("both-maybe", "maybe-yes")
+    )
+    return eligible
+
+
 def get_display_results(round=None):
     """With no round given: the current round's matches/maybe/mismatched
     (refined by however many rounds have run), plus "both passed" -- which
-    accumulates every round's passes, since once passed it's passed for
-    good. With a round given: that round's own historical snapshot as it
-    was at the time, unmodified."""
+    accumulates every round's actual passes AND anything that was eligible
+    at some round but didn't carry into the next one (e.g. mismatched /
+    one-maybe-one-no names once a later round stopped carrying them
+    forward), since either way it's no longer being actively considered.
+    With a round given: that round's own historical snapshot as it was at
+    the time, unmodified."""
     if round is not None:
         return get_results(round=round)
 
@@ -371,6 +395,13 @@ def get_display_results(round=None):
     both_disliked = set()
     for r in range(1, current + 1):
         both_disliked.update(get_results(round=r)["bothDisliked"])
+    for r in range(1, current):
+        results_r = get_results(round=r)
+        full_eligible_r = set(results_r["matches"])
+        full_eligible_r.update(x["name"] for x in results_r["maybe"])
+        full_eligible_r.update(x["name"] for x in results_r["oneSided"])
+        carried = _round_queue_names(r + 1)
+        both_disliked.update(full_eligible_r - carried)
 
     return {
         "round": current,
@@ -392,8 +423,7 @@ def get_round_status():
     )
     eligible_count = 0
     if current_complete:
-        results = get_results(round=current)
-        eligible_count = len(results["matches"]) + len(results["maybe"]) + len(results["oneSided"])
+        eligible_count = len(_next_round_eligible_names(current))
     return {
         "currentRound": current,
         "currentRoundComplete": current_complete,
@@ -404,11 +434,7 @@ def get_round_status():
 
 def start_next_round():
     current = get_current_round()
-    results = get_results(round=current)
-    eligible = set(results["matches"])
-    eligible.update(x["name"] for x in results["maybe"])
-    eligible.update(x["name"] for x in results["oneSided"])
-    eligible = sorted(eligible, key=str.lower)
+    eligible = sorted(_next_round_eligible_names(current), key=str.lower)
     next_round = current + 1
 
     conn = get_conn()
